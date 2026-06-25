@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 body {
-    font-family: xxx;
-    margin: 0;
+    font-family:  "Inter", sans-serif;
+    margin: 0px;
     padding: 0px;
 }
 
@@ -9,7 +11,6 @@ header ul {
     list-style-type: none;
     justify-content: space-between;
     align-items: center;
-    margin: 20px;
 }
 
 header .dia {
@@ -19,7 +20,7 @@ header .dia {
     list-style: none;
     align-items: left;
     display: block;
-    background-color: gray;
+    background-color: #CCCCCC;
 }
 
 a {
@@ -27,7 +28,109 @@ a {
     color: inherit;
 }
 
-main .card {
+.card {
     display: flex;
-    justifyt-content: space-evenly;
+    justify-content: space-evenly;
+    margin: 10px;
+}
+
+.tuManera {
+    background-color: pink;
+    padding: 30px;
+    margin: 50px 10px 50px 10px;
+}
+
+.tuManeraIcono{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tuManeraTexto h4, h5 {
+    font-weight: bolder;
+    display: block;
+    justify-content: left;
+    align-items: center;
+}
+
+.tuManeraBoton1 button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-width: 2px;
+    border-radius: 4px;
+    border-color: #990004;
+    background-color: #990004;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.tuManeraBoton2 button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-width: 2px;
+    border-radius: 4px;
+    border-color: #990004;
+    background-color: white;
+    font-weight: 500;
+    color: #990004;
+    cursor: pointer;
+}
+
+.opinion {
+    background-color: #333333;
+    margin: 50px 10px 50px 10px;
+    padding: 30px;
+}
+
+.opinionTexto h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.opinionBoton button {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    background-color: #FF0000;
+    color: #333333;
+    font-weight: 500;
+    border: 0px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.comentado {
+    background-color: white;
+}
+
+.tituloComentado{
+    background-color: #990004;
+    color: white;
+    padding: 10px;
+}
+
+.cardComentado .card {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.numeroComentado {
+    color: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-size: auto;
+}
+
+.cardComentado {
+    padding: 20px 0px 20px 0px;
 }
