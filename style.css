@@ -67,6 +67,7 @@ a {
     background-color: #990004;
     color: white;
     font-weight: 500;
+    padding: 5px;
     cursor: pointer;
 }
 
@@ -79,6 +80,7 @@ a {
     border-color: #990004;
     background-color: white;
     font-weight: 500;
+    padding: 5px;
     color: #990004;
     cursor: pointer;
 }
@@ -109,6 +111,7 @@ a {
     background-color: #FF0000;
     color: white;
     font-weight: bolder;
+    padding: 5px;
     border: 0;
     border-radius: 4px;
     margin-left: 375px;
@@ -168,6 +171,7 @@ a {
 
 .participaron ul {
     display: flex;
+    justify-content: left;
     align-items: center;
     gap: 8px;
     list-style: none;
@@ -189,7 +193,7 @@ a {
 .votoBoton button {
     width: 100%;
     max-width: 180px;
-    padding: 12px;
+    padding: 10px;
     margin: 0px;
     background: #ff0000;
     color: white;
