@@ -41,6 +41,12 @@ a {
     background-color: #F2F2F2;
 }
 
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .card-body h6 {
     display: inline-block;
     background-color: #990004;
@@ -48,6 +54,10 @@ a {
     font-weight: bolder;
     padding: 5px;
     border-radius: 4px;
+}
+
+.noticiasDerecha .card-title {
+    font-size: 1rem;
 }
 
 .tuManera {
