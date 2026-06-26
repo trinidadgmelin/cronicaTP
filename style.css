@@ -1,0 +1,497 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body {
+    font-family:  "Inter", sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+header ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px;
+    padding: 10px;
+}
+
+header .dia {
+    font-size: 18px;
+    font-weight: normal;
+    font-style: italic;
+    padding: 10px;
+    padding-left: 16%;
+    list-style: none;
+    align-items: left;
+    display: block;
+    background-color: #CCCCCC;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+    border: none;
+    border-radius: 0;
+    background-color: #F2F2F2;
+}
+
+.card-body h6 {
+    display: inline-block;
+    background-color: #990004;
+    color: white;
+    font-weight: bolder;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.tuManera {
+    background-color: pink;
+    padding: 30px;
+    margin: 50px 10px;
+}
+
+.tuManeraIcono{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tuManeraTexto h4, h5 {
+    font-weight: bolder;
+    display: block;
+    justify-content: left;
+    align-items: center;
+}
+
+.tuManeraBoton1 button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-width: 2px;
+    border-radius: 4px;
+    border-color: #990004;
+    background-color: #990004;
+    color: white;
+    font-weight: 500;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.tuManeraBoton2 button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-width: 2px;
+    border-radius: 4px;
+    border-color: #990004;
+    background-color: white;
+    font-weight: 500;
+    padding: 5px;
+    color: #990004;
+    cursor: pointer;
+}
+
+.opinion {
+    background-color: #333333;
+    margin: 50px 10px 50px 10px;
+    padding: 30px;
+}
+
+.opinion ul {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.opinion h3 {
+    color: white;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.opinion ul button {
+    background-color: #FF0000;
+    color: white;
+    font-weight: bolder;
+    padding: 5px;
+    border: 0;
+    border-radius: 4px;
+    margin-left: 315px;
+    margin-right: 50px;
+    cursor: pointer;
+}
+
+.comentado {
+    background-color: white;
+}
+
+.tituloComentado{
+    background-color: #990004;
+    color: white;
+    padding: 10px;
+}
+
+.cardComentado .card {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.numeroComentado {
+    color: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-size: auto;
+}
+
+.cardComentado {
+    padding: 20px 0px 20px 0px;
+}
+.encuesta {
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+}
+
+.cuerpoEncuesta {
+    width: 100%;
+    padding: 15px;
+}
+
+.listaEncuesta {
+    width: 100%;
+}
+
+.encuesta *,
+.cuerpoEncuesta *,
+.listaEncuesta * {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.participaron ul {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+ }
+
+ .participaron p {
+    margin: 0;
+}
+
+.votoBoton {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.votoBoton button {
+    width: 100%;
+    max-width: 180px;
+    padding: 10px;
+    margin: 0px;
+    background: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.actualidad, .sociedad, .entretenimiento, .agenda, .vida{
+    background: linear-gradient(
+         to bottom,
+        #ff0000 0 30%,
+        white 30% 100%
+    );
+    margin: 50px 0px;
+    padding: 10px 30px 10px 30px;
+}
+
+.actualidad ul, .sociedad ul, .entretenimiento ul, .agenda ul, .vida ul {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+}
+
+
+.actualidad h3, .sociedad h3, .entretenimiento h3, .agenda h3, .vida h3 {
+    color: white;
+    font-weight: bold;
+    padding: 0px;
+    margin-left: 10px;
+    background: transparent;
+}
+
+.actualidad ul button, .sociedad ul button, .entretenimiento ul button, .agenda ul button, .vida ul button {
+    background-color: white;
+    color: #333333;
+    font-weight: bolder;
+    padding: 5px;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0px 10px;
+}
+
+.mas {
+    margin-left: auto;
+    background: transparent;
+}
+
+.depo {
+    background: linear-gradient(
+         to bottom,
+        #04D6AA 0 30%,
+        white 30% 100%
+    );
+    margin: 50px 0px;
+    padding: 10px 30px 10px 30px;
+}
+
+.depo ul {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.depo ul button {
+    background-color: #FFEA00;
+    color: #333333;
+    font-weight: bolder;
+    padding: 5px;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0px 10px;
+}
+
+.depo img {
+    background: transparent;
+}
+
+.depo .card{
+    background-color: #D3F8F0;
+}
+
+.noticiasDerecha{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.noticiasDerecha .card{
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.sociedad {
+    background: linear-gradient(
+         to bottom,
+        #ff0000 0 30%,
+        white 30% 100%
+    );
+    margin: 50px 0px;
+    padding: 10px 30px 10px 30px;
+}
+
+.sociedad ul {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+}
+
+
+.sociedad h3 {
+    color: white;
+    font-weight: bold;
+    padding: 0px;
+    margin-left: 10px;
+    background: transparent;
+}
+
+.sociedad ul button {
+    color: #333333;
+    font-weight: bolder;
+    padding: 5px;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0px 10px;
+}
+
+
+.CM {
+    background: linear-gradient(
+         to bottom,
+        #FB83DB 0 30%,
+        white 30% 100%
+    );
+    margin: 50px 0px;
+    padding: 10px 30px 10px 30px;
+}
+
+.CM ul {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.CM ul button {
+    background-color: #E5027B;
+    color: white;
+    font-weight: bolder;
+    padding: 5px;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0px 10px;
+}
+
+.CM img {
+    background: transparent;
+}
+
+.CM .card{
+    background-color: #FED6F3;
+}
+
+.FMQ {
+    background: linear-gradient(
+         to bottom,
+        #696969 0 30%,
+        white 30% 100%
+    );
+    margin: 50px 0px;
+    padding: 10px 30px 10px 30px;
+}
+
+.FMQ ul {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.FMQ ul button {
+    background-color: #2C2C2C;
+    color: white;
+    font-weight: bolder;
+    padding: 5px;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0px 10px;
+}
+
+.FMQ img {
+    background: transparent;
+}
+
+.FMQ .card{
+    background-color: #E8D9D9;
+}
+
+.DS {
+    background: linear-gradient(
+         to bottom,
+        #DE0E7A 0 30%,
+        white 30% 100%
+    );
+    margin: 50px 0px;
+    padding: 10px 30px 10px 30px;
+}
+
+.DS ul {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.DS ul button {
+    background-color: #04D6AA;
+    color: white;
+    font-weight: bolder;
+    padding: 5px;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0px 10px;
+}
+
+.DS img {
+    background: transparent;
+}
+
+.DS .card{
+    background-color: #EAFDF9;
+}
+
+footer {
+    background-color: #990004;
+    padding: 50px 10px;
+}
+
+footer ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0px 50px;
+    padding: 0;
+}
+
+.logofooter {
+    margin-right: auto;
+}
+
+footer ul li:not(.logofooter) {
+    width: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
