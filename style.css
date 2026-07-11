@@ -520,4 +520,84 @@ footer ul li:not(.logofooter) {
      width: 100%;
      flex-grow: 1
     }
+
+    .tuManera{
+        padding:20px;
+    }
+
+    .tuManera .row{
+        justify-content:center;
+        align-items:center;
+        row-gap:20px;
+    }
+
+    .tuManeraIcono{
+        flex:0 0 100%;
+        max-width:100%;
+    }
+
+    .tuManeraTexto{
+        flex:0 0 100%;
+        max-width:100%;
+        text-align:center;
+    }
+
+    .tuManeraBoton1,
+    .tuManeraBoton2{
+        flex:0 0 50%;
+        max-width:50%;
+        display:flex;
+        justify-content:center;
+    }
+
+    .tuManeraBoton1 button,
+    .tuManeraBoton2 button{
+        width:100%;
+        max-width:180px;
+    }
+
+    .opinion{
+    padding:20px;
+}
+
+.opinion ul{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0;
+    margin-bottom:20px;
+}
+
+.opinion h3{
+    margin:0;
+    padding:0;
+    font-size:2rem;
+    line-height:1.1;
+}
+
+.opinion ul button{
+    margin:0;
+    padding:5px;
+    font-size:.9rem;
+}
+
+.cardComentado{
+    margin-bottom:10px;
+}
+
+.numeroComentado{
+    justify-content:flex-start;
+}
+
+.numeroComentado h4{
+    font-size:1.8rem;
+}
+
+.cardComentado .card-title{
+    font-size:.9rem;
+}
+
+.cardComentado .card-body{
+    padding:8px;
+}
 }
