@@ -13,33 +13,39 @@
     cards: https://getbootstrap.com/docs/5.3/components/card/ -->
 
     <header>
-        <ul>
+        <ul class="menu">
+            <div class="headerIzq">
             <li><a href="#">
-                <svg  width="24" height="24" fill="currentColor" viewBox="0 0 24 24" >
+                <svg  width="32" height="32" fill="currentColor" viewBox="0 0 24 24" >
                 <path d="M3 5h18v2H3zm0 6h18v2H3zm0 6h18v2H3z"></path>
                 </svg>
                 </a>
             </li>
             <li><a href="#">
-                <svg  width="24" height="24" fill="currentColor" viewBox="0 0 24 24" >
+                <svg  width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="ocultar-mobile">
                 <path d="m17.06 14.94-2.8-1.34A6.96 6.96 0 0 0 16 9c0-3.86-3.14-7-7-7S2 5.14 2 9s3.14 7 7 7c1.76 0 3.37-.66 4.6-1.74l1.34 2.8 5 5 2.12-2.12zM9 14c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5"></path>
                 </svg>
             </a></li>
+            </div>
+            <div class="headerCentro">
             <li><a href="#">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Cr%C3%B3nica-logo.svg/1280px-Cr%C3%B3nica-logo.svg.png" alt="Crónica Logo" width="100">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Cr%C3%B3nica-logo.svg/1280px-Cr%C3%B3nica-logo.svg.png" alt="Crónica Logo" width="200">
             </a></li>
+            </div>
+            <div class="headerDer">
          <li><a href="#">
-                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"></path>
+                <svg  xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 24 24" class="ocultar-mobile">
+                <path d="M14 12c0-1.1-.9-2-2-2s-2 .9-2 2a2 2 0 1 0 4 0m-6 0c0-1.07.42-2.07 1.17-2.82L7.76 7.76A5.97 5.97 0 0 0 6 12c0 1.6.62 3.11 1.76 4.25l1.41-1.42A3.96 3.96 0 0 1 8 12m8.24-4.24-1.41 1.41C15.59 9.93 16 10.93 16 12s-.42 2.07-1.17 2.83l1.41 1.41C17.37 15.11 18 13.6 18 12s-.62-3.11-1.76-4.24"></path><path d="M6.34 17.66C4.83 16.15 3.99 14.14 3.99 12s.83-4.14 2.34-5.65L4.92 4.93C3.03 6.82 1.99 9.33 1.99 12s1.04 5.18 2.93 7.07l1.41-1.41ZM19.07 4.93l-1.41 1.41C19.17 7.85 20 9.86 20 12s-.83 4.15-2.34 5.66l1.41 1.41C20.96 17.18 22 14.67 22 12s-1.04-5.18-2.93-7.07"></path>
                 </svg>
                 </a>
             </li>
-            <li><a href="perfil.html">
-                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <li><a href="login.html">
+                <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C6.579 2 2 6.579 2 12s4.579 10 10 10 10-4.579 10-10S17.421 2 12 2zm0 5c1.727 0 3 1.272 3 3s-1.273 3-3 3-3-1.272-3-3 1.273-3 3-3zm0 13c-2.674 0-5.115-1.196-6.735-3.084C6.13 15.355 8.929 14 12 14s5.87 1.355 6.735 2.916C17.115 18.804 14.674 20 12 20z"></path>
                 </svg>
                 </a>
             </li>
+            </div>
         </ul>
 
         <ul class="dia"><li>Martes, 9 de Junio de 2026</li></ul>
@@ -51,7 +57,7 @@
     <div class="row g-0">
 
         <div class="col-12 col-md-6">
-            <div class="card tarjetaNoticia">
+            <div class="card noticiaPrinci">
                 <img src="https://i1.cronica.com.ar/files/image/1668/1668787/6a26101e203b8_1011_568!.webp?s=f93698144cf9effb86a6730e2868b2f6&d=1780801200&oe=jpg">
                 <div class="card-body">
                             <h6>SOCIEDAD</h6>
@@ -89,7 +95,7 @@
     
     
 
-        <div class="col-12 col-lg-3 noticiasDerecha">
+        <div class="col-12 col-md-3 noticiasDerecha">
             <div class="card mb-3">
                 <div class="row g-0">
                     <div class="col-md-4">
@@ -151,8 +157,8 @@
         <div class="row g-0">
             <div class="col-12 col-md-3">
                 
-                <div class="col-12">
-                    <div class="card tarjetaNoticia">
+                <div class="col-12 h-100">
+                    <div class="card tarjetaNoticia h-100">
                         <img src="https://www.infobae.com/resizer/v2/https%3A%2F%2Fs3.amazonaws.com%2Farc-wordpress-client-uploads%2Finfobae-wp%2Fwp-content%2Fuploads%2F2019%2F08%2F29205100%2Fmeme-gato-006.jpg?auth=429162069ea9dc321b5f581ec74540925bc95eebc1c7abc5294460904a95a144&smart=true&width=992&height=558&quality=85" class="card-img-top" alt="Noticia Secundaria 1">
                         <div class="card-body">
                             <h6>CATEGORIA</h6>
@@ -163,8 +169,8 @@
             </div>
 
             <div class="col-12 col-md-3">
-                <div class="col-12">
-                    <div class="card tarjetaNoticia">
+                <div class="col-12 h-100">
+                    <div class="card tarjetaNoticia h-100">
                         <img src="https://www.infobae.com/resizer/v2/https%3A%2F%2Fs3.amazonaws.com%2Farc-wordpress-client-uploads%2Finfobae-wp%2Fwp-content%2Fuploads%2F2019%2F08%2F29205100%2Fmeme-gato-006.jpg?auth=429162069ea9dc321b5f581ec74540925bc95eebc1c7abc5294460904a95a144&smart=true&width=992&height=558&quality=85" class="card-img-top" alt="Noticia Secundaria 2">
                         <div class="card-body">
                             <h6>CATEGORIA</h6>
@@ -176,8 +182,8 @@
             </div>
 
             <div class="col-12 col-md-3">
-                <div class="col-12">
-                    <div class="card tarjetaNoticia">
+                <div class="col-12 h-100">
+                    <div class="card tarjetaNoticia h-100">
                         <img src="https://www.infobae.com/resizer/v2/https%3A%2F%2Fs3.amazonaws.com%2Farc-wordpress-client-uploads%2Finfobae-wp%2Fwp-content%2Fuploads%2F2019%2F08%2F29205100%2Fmeme-gato-006.jpg?auth=429162069ea9dc321b5f581ec74540925bc95eebc1c7abc5294460904a95a144&smart=true&width=992&height=558&quality=85" class="card-img-top" alt="Noticia Secundaria 2">
                         <div class="card-body">
                             <h6>CATEGORIA</h6>
@@ -189,8 +195,8 @@
             </div>
 
             <div class="col-12 col-md-3">
-                <div class="col-12">
-                    <div class="card tarjetaNoticia">
+                <div class="col-12 h-100">
+                    <div class="card tarjetaNoticia h-100">
                         <img src="https://www.infobae.com/resizer/v2/https%3A%2F%2Fs3.amazonaws.com%2Farc-wordpress-client-uploads%2Finfobae-wp%2Fwp-content%2Fuploads%2F2019%2F08%2F29205100%2Fmeme-gato-006.jpg?auth=429162069ea9dc321b5f581ec74540925bc95eebc1c7abc5294460904a95a144&smart=true&width=992&height=558&quality=85" class="card-img-top" alt="Noticia Secundaria 2">
                         <div class="card-body">
                             <h6>CATEGORIA</h6>
@@ -249,55 +255,55 @@
                                 <h4>1</h4>
                             </div>
 
-                            <div class="card col-10">
-                            <div class="row g-0">
-                            <div class="col-md-4">
-                            <img src="https://www.infobae.com/resizer/v2/https%3A%2F%2Fs3.amazonaws.com%2Farc-wordpress-client-uploads%2Finfobae-wp%2Fwp-content%2Fuploads%2F2019%2F08%2F29205100%2Fmeme-gato-006.jpg?auth=429162069ea9dc321b5f581ec74540925bc95eebc1c7abc5294460904a95a144&smart=true&width=992&height=558&quality=85" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                            <div class="card-body">
-                            <h6>CATEGORIA</h6>
-                            <h5 class="card-title">Card title</h5>
-                            </div>
-                            </div>
-                            </div>
-                            </div>
+                            <div class="card mb-3">
+    <div class="row g-0">
+        <div class="col-4 col-md-4">
+            <img src="..." class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-8 col-md-8">
+            <div class="card-body">
+                <h6>CATEGORIA</h6>
+                <h5 class="card-title">Título de la noticia</h5>
+            </div>
+        </div>
+    </div>
+</div>
 
                             <div class="col-1 numeroComentado">
                                 <h4>2</h4>
                             </div>
 
-                            <div class="card col-10">
-                            <div class="row g-0">
-                            <div class="col-md-4">
-                            <img src="https://www.infobae.com/resizer/v2/https%3A%2F%2Fs3.amazonaws.com%2Farc-wordpress-client-uploads%2Finfobae-wp%2Fwp-content%2Fuploads%2F2019%2F08%2F29205100%2Fmeme-gato-006.jpg?auth=429162069ea9dc321b5f581ec74540925bc95eebc1c7abc5294460904a95a144&smart=true&width=992&height=558&quality=85" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                            <div class="card-body">
-                            <h6>CATEGORIA</h6>
-                            <h5 class="card-title">Card title</h5>
-                            </div>
-                            </div>
-                            </div>
-                            </div>
+                            <div class="card mb-3">
+    <div class="row g-0">
+        <div class="col-4 col-md-4">
+            <img src="..." class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-8 col-md-8">
+            <div class="card-body">
+                <h6>CATEGORIA</h6>
+                <h5 class="card-title">Título de la noticia</h5>
+            </div>
+        </div>
+    </div>
+</div>
 
                             <div class="col-1 numeroComentado">
                                 <h4>3</h4>
                             </div>
 
-                            <div class="card col-10">
-                            <div class="row g-0">
-                            <div class="col-md-4">
-                            <img src="https://www.infobae.com/resizer/v2/https%3A%2F%2Fs3.amazonaws.com%2Farc-wordpress-client-uploads%2Finfobae-wp%2Fwp-content%2Fuploads%2F2019%2F08%2F29205100%2Fmeme-gato-006.jpg?auth=429162069ea9dc321b5f581ec74540925bc95eebc1c7abc5294460904a95a144&smart=true&width=992&height=558&quality=85" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                            <div class="card-body">
-                            <h6>CATEGORIA</h6>
-                            <h5 class="card-title">Card title</h5>
-                            </div>
-                            </div>
-                            </div>
-                            </div>
+                            <div class="card mb-3">
+    <div class="row g-0">
+        <div class="col-4 col-md-4">
+            <img src="..." class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-8 col-md-8">
+            <div class="card-body">
+                <h6>CATEGORIA</h6>
+                <h5 class="card-title">Título de la noticia</h5>
+            </div>
+        </div>
+    </div>
+</div>
 
                         </div>
                     </div>
@@ -315,55 +321,55 @@
                                 <h4>1</h4>
                             </div>
 
-                            <div class="card col-10">
-                            <div class="row g-0">
-                            <div class="col-md-4">
-                            <img src="https://www.infobae.com/resizer/v2/https%3A%2F%2Fs3.amazonaws.com%2Farc-wordpress-client-uploads%2Finfobae-wp%2Fwp-content%2Fuploads%2F2019%2F08%2F29205100%2Fmeme-gato-006.jpg?auth=429162069ea9dc321b5f581ec74540925bc95eebc1c7abc5294460904a95a144&smart=true&width=992&height=558&quality=85" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                            <div class="card-body">
-                            <h6>CATEGORIA</h6>
-                            <h5 class="card-title">Card title</h5>
-                            </div>
-                            </div>
-                            </div>
-                            </div>
+                            <div class="card mb-3">
+    <div class="row g-0">
+        <div class="col-4 col-md-4">
+            <img src="..." class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-8 col-md-8">
+            <div class="card-body">
+                <h6>CATEGORIA</h6>
+                <h5 class="card-title">Título de la noticia</h5>
+            </div>
+        </div>
+    </div>
+</div>
 
                             <div class="col-1 numeroComentado">
                                 <h4>2</h4>
                             </div>
 
-                            <div class="card col-10">
-                            <div class="row g-0">
-                            <div class="col-md-4">
-                            <img src="https://www.infobae.com/resizer/v2/https%3A%2F%2Fs3.amazonaws.com%2Farc-wordpress-client-uploads%2Finfobae-wp%2Fwp-content%2Fuploads%2F2019%2F08%2F29205100%2Fmeme-gato-006.jpg?auth=429162069ea9dc321b5f581ec74540925bc95eebc1c7abc5294460904a95a144&smart=true&width=992&height=558&quality=85" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                            <div class="card-body">
-                            <h6>CATEGORIA</h6>
-                            <h5 class="card-title">Card title</h5>
-                            </div>
-                            </div>
-                            </div>
-                            </div>
+                            <div class="card mb-3">
+    <div class="row g-0">
+        <div class="col-4 col-md-4">
+            <img src="..." class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-8 col-md-8">
+            <div class="card-body">
+                <h6>CATEGORIA</h6>
+                <h5 class="card-title">Título de la noticia</h5>
+            </div>
+        </div>
+    </div>
+</div>
 
                             <div class="col-1 numeroComentado">
                                 <h4>3</h4>
                             </div>
 
-                            <div class="card col-10">
-                            <div class="row g-0">
-                            <div class="col-md-4">
-                            <img src="https://www.infobae.com/resizer/v2/https%3A%2F%2Fs3.amazonaws.com%2Farc-wordpress-client-uploads%2Finfobae-wp%2Fwp-content%2Fuploads%2F2019%2F08%2F29205100%2Fmeme-gato-006.jpg?auth=429162069ea9dc321b5f581ec74540925bc95eebc1c7abc5294460904a95a144&smart=true&width=992&height=558&quality=85" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                            <div class="card-body">
-                            <h6>CATEGORIA</h6>
-                            <h5 class="card-title">Card title</h5>
-                            </div>
-                            </div>
-                            </div>
-                            </div>
+                            <div class="card mb-3">
+    <div class="row g-0">
+        <div class="col-4 col-md-4">
+            <img src="..." class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-8 col-md-8">
+            <div class="card-body">
+                <h6>CATEGORIA</h6>
+                <h5 class="card-title">Título de la noticia</h5>
+            </div>
+        </div>
+    </div>
+</div>
 
                         </div>
                     </div>

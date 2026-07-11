@@ -6,14 +6,29 @@ body {
     padding: 0px;
 }
 
-header ul {
+header .menu {
     display: flex;
     list-style-type: none;
     justify-content: space-between;
     align-items: center;
     margin: 0px;
-    padding: 10px;
+    padding: 20px;
 }
+
+.headerIzq, 
+.headerDer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+}
+
+.headerCentro {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
 
 header .dia {
     font-size: 18px;
@@ -32,12 +47,16 @@ a {
     color: inherit;
 }
 
+section {
+    margin: 30px 0px;
+}
+
 .card {
     display: flex;
     justify-content: space-evenly;
     margin: 10px;
     border: none;
-    border-radius: 0;
+    border-radius: 0px;
     background-color: #F2F2F2;
 }
 
@@ -49,6 +68,38 @@ a {
     padding: 5px;
     border-radius: 4px;
 }
+
+.noticiaPrincipal {
+    background-color: #333333;
+    color: #F2F2F2;
+}
+
+.tarjetaNoticia .card-img-top {
+    height: 200px;       /* O el alto fijo que vos quieras que tengan todas */
+    object-fit: cover;   /* Esto hace que la imagen se recorte mágicamente en vez de deformarse */
+}
+
+/* 1. Evitamos que las filas internas de las tarjetas se separen raro */
+.card .row.g-0 {
+    align-items: stretch; /* Obliga a que la columna de la foto y el texto midan lo mismo */
+    width: 100%;
+}
+
+/* 2. Forzamos a la columna de la imagen a no generar paddings ni espacios extra */
+.card .col-md-4 {
+    display: flex;
+}
+
+/* 3. La imagen se adapta al 100% de su contenedor sin dejar aire */
+.card .row.g-0 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+z
+
 
 .tuManera {
     background-color: pink;
@@ -495,3 +546,43 @@ footer ul li:not(.logofooter) {
     justify-content: center;
     align-items: center;
  }
+
+ @media (max-width: 390px) {
+  body {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+  }
+
+    section {
+    margin: 20px 0px;
+    }
+
+    header .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    /* 2. Hacemos que los bloques izquierdo, centro y derecho se apilen prolijos */
+    .headerIzq, 
+    .headerDer,
+    .headerCentro {
+        flex-direction: row; /* Mantienen sus iconos en línea interna */
+        justify-content: center;
+        padding: 0;
+    }
+
+    /* 3. Reacomodamos la barra del día para que no quede corrida en mobile */
+    header .dia {
+        padding-left: 0px; /* Le sacamos ese 16% que en mobile lo rompería */
+        text-align: center; /* Lo centramos para que quede prolijo */
+        font-size: 14px; /* Un toque más chico para pantallas chicas */
+    }
+
+    /* 4. LA MAGIA: Esto hace que desaparezcan los SVG que tengan esta clase */
+    .ocultar-mobile {
+        display: none;
+    }
+}
