@@ -920,4 +920,41 @@ footer ul li:not(.logofooter) {
 .DS h3{
     margin: 0;
 }
+
+footer {
+        padding: 30px 10px;
+    }
+
+    footer ul {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        gap: 25px;
+    }
+
+   .redes {
+        display: flex;          /* Activamos Flexbox para alinear en fila */
+        flex-direction: row;    /* Forzamos a que se queden en una fila horizontal */
+        justify-content: center;
+        align-items: center;
+        gap: 25px;              /* Separación horizontal entre cada icono */
+    }
+
+    .logofooter {
+        margin-right: 0;
+    }
+
+    .logofooter img {
+        width: 180px;
+    }
+
+    footer ul li:not(.logofooter) {
+        width: auto;
+    }
+
+    footer ul li:not(.logofooter) svg {
+        width: 24px;
+        height: 24px;
+    }
 }
