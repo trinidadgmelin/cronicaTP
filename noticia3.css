@@ -1,0 +1,1316 @@
+/* ==========================================================================
+   1. FUENTES Y ESTILOS GLOBALES
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #f5f5f5;
+    /* Ahora el fondo general es blanco puro */
+    color: #1a1a1a;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: #990004;
+}
+
+.maincontainer {
+    max-width: 1400px;
+    margin: 0;
+    width: 100%;
+    padding: -20px;
+}
+
+
+/* ==========================================================================
+   2. HEADER & NAVEGACIÓN
+   ========================================================================== */
+
+.header-negro {
+    width: 100%;
+    background: #000;
+}
+
+
+/* ==========================
+        BARRA ROJA
+========================== */
+
+.header-top {
+    height: 45px;
+    background: #c10000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 18px;
+}
+
+.logo-cronica img {
+    height: 28px;
+}
+
+.fecha-actual {
+    color: #fff;
+    font-size: 12px;
+    font-style: italic;
+}
+
+
+/* ==========================
+      BARRA INFERIOR
+========================== */
+
+.header-main {
+    height: 72px;
+    background: #3a3030;
+    display: grid;
+    grid-template-columns: 70px 70px 1fr 250px 1fr 70px 70px;
+}
+
+.item-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid rgba(255, 255, 255, .08);
+    border-right: 1px solid rgba(0, 0, 0, .4);
+}
+
+.logo-centro img {
+    height: 40px;
+}
+
+.btn-icono {
+    background: none;
+    border: none;
+    color: #d7d7d7;
+    cursor: pointer;
+}
+
+.btn-icono:hover {
+    color: white;
+}
+
+.item-header a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: #d8d8d8;
+    text-decoration: none;
+    transition: .25s;
+}
+
+.item-header a:hover {
+    background: #c30000;
+    color: #fff;
+}
+
+.item-header svg {
+    transition: .25s;
+}
+
+
+/* Botones con estilos de color blanco */
+
+.btn-menu-burger-blanco,
+.btn-buscar-blanco {
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 5px;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.btn-menu-burger-blanco:hover,
+.btn-buscar-blanco:hover {
+    color: #ff0000;
+    transform: scale(1.05);
+}
+
+
+/* Tipografía de marca súper imponente */
+
+.logo-texto-cronica {
+    font-family: 'Arial Black', 'Impact', sans-serif;
+    font-size: 3.5rem;
+    /* Tamaño gigante y masivo */
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -2px;
+    /* Letras muy juntas estilo periódico clásico */
+    color: #ffffff;
+    display: block;
+    transition: color 0.2s;
+}
+
+.logo-texto-cronica:hover {
+    color: #ff0000;
+}
+
+
+/* Eslogan inferior */
+
+.eslogan-bajo-logo {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    /* Letras muy separadas */
+    color: #ff0000;
+    margin-top: 2px;
+}
+
+
+/* ==========================================================================
+   3. MAQUETADO DE LA NOTICIA (LIMPIO, SIN BLOQUES, SIN BORDES)
+   ========================================================================== */
+
+
+/* Botón Volver */
+
+.btn-volver {
+    font-size: 14px;
+    font-weight: 600;
+    color: #6c757d;
+    text-decoration: none;
+    display: inline-block;
+    transition: color 0.2s ease-in-out;
+}
+
+.btn-volver:hover {
+    color: #990004;
+}
+
+.badge-categoria {
+    background-color: #990004;
+    color: #ffffff;
+    font-weight: 800;
+    padding: 6px 12px;
+    font-size: 25px;
+    letter-spacing: 1px;
+    border-radius: 2px;
+}
+
+.col-lg-9 {
+    padding-left: 65px !important;
+    padding-right: 15px !important;
+}
+
+figure.widget-type-twitter {
+    margin: 25px 15px;
+}
+
+
+/* Forzar que el iframe interno respete el centrado */
+
+figure.widget-type-twitter .twitter-tweet {
+    margin: 0 auto !important;
+    /* Centra el contenedor de Twitter */
+}
+
+
+/* Cabecera de la noticia libre de marcos */
+
+.noticia-cabecera {
+    background-color: transparent;
+    padding: 10px 0px;
+    /* Sin padding negativo para evitar desborde */
+    border: none;
+    /* Sin bordes de caja */
+    margin-bottom: 0px;
+}
+
+
+/* Contenedor del cuerpo libre de marcos */
+
+.article-body-container {
+    background-color: transparent;
+    padding: 30px 30px;
+    /* Corrección de paddings laterales */
+    border: none;
+    /* Sin bordes */
+}
+
+
+/* Asegurar que la imagen principal se adapte perfectamente */
+
+.articulo-imagen-wrapper {
+    justify-content: center;
+    align-items: center;
+    width: 1500px;
+    margin-bottom: 15px;
+    margin-left: 120px;
+    /* Espacio opcional abajo de la imagen */
+}
+
+.articulo-imagen-wrapper img {
+    max-height: 600px;
+    object-fit: cover;
+    width: 70%;
+}
+
+.articulo-titulo {
+    font-size: 2.8rem;
+    font-weight: 900;
+    line-height: 1.25;
+    color: #111;
+    letter-spacing: -0.5px;
+    padding-bottom: 5px;
+}
+
+.articulo-bajada {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #444;
+    line-height: 1.6;
+}
+
+.divisor-articulo {
+    border-color: #ddd;
+    opacity: 0.7;
+    margin: 20px 0;
+}
+
+.pie-imagen {
+    font-size: 13px;
+    border-left: 3px solid #990004;
+    padding-left: 8px;
+    margin-top: 8px;
+}
+
+.articulo-cuerpo p {
+    font-size: 20px;
+    line-height: 1.7;
+    color: #2b2b2b;
+    margin-bottom: 1.0rem;
+    margin-left: 110px;
+}
+
+.articulo-imagen-secundaria img {
+    margin-bottom: 30px;
+}
+
+.articulo-subtitulo {
+    font-size: 30px;
+    font-weight: 800;
+    color: #111;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+
+/* ==========================================================================
+   4. ASIDE (RECOMENDADAS - ESTILO CRÓNICA SIN BORDES EXTERNOS)
+   ========================================================================== */
+
+.sticky-sidebar {
+    position: sticky;
+    top: 90px;
+}
+
+.sidebar-noticias {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Título de la sección (TE PUEDE INTERESAR / MÁS DE COSA DE LOCOS) */
+
+.sidebar-titulo {
+    font-family: 'Arial Black', sans-serif;
+    /* O la tipografía sans-serif fuerte que uses */
+    font-size: 1.3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #000;
+    /* Línea negra gruesa debajo del título principal */
+    padding-bottom: 5px;
+}
+
+
+/* Cada fila de noticia recomendada */
+
+.item-recomendado {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 12px 0;
+    border-top: 1px solid #ddd;
+    /* La línea gris clara divisoria */
+    gap: 12px;
+    /* Espacio entre el texto y la imagen */
+}
+
+
+/* El texto de la noticia */
+
+.titulo-recomendado {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #111;
+    margin: 0;
+    flex: 1;
+    /* Hace que el texto ocupe todo el espacio sobrante */
+    /* Limita a 4 líneas de texto por si el título es extremadamente largo */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+
+/* La imagen lateral cuadrada */
+
+.img-recomendada {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    /* Evita que la imagen se deforme al recortarse como cuadrado */
+    flex-shrink: 0;
+    /* Evita que la imagen se achique si el texto es muy largo */
+}
+
+
+/* ==========================================================================
+   5. FOOTER
+   ========================================================================== */
+
+footer {
+    background-color: #990004;
+    color: #ffffff;
+    padding: 40px 0;
+    margin-top: 50px;
+}
+
+footer ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0 50px;
+    padding: 0;
+}
+
+.logofooter {
+    margin-right: auto;
+}
+
+footer ul li:not(.logofooter) {
+    width: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Contenedor general de la sección */
+
+.tags-seccion {
+    border-top: 1px solid #ddd;
+    padding-top: 60px;
+}
+
+
+/* Título de la sección */
+
+.tags-titulo {
+    font-family: Arial, sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 12px;
+    margin-bottom: 30px;
+}
+
+
+/* Contenedor de botones */
+
+.tags-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* El botón bordó con la campanita */
+
+.tags-seccion {
+    margin-left: 90px;
+}
+
+.icono-campana {
+    color: #000000;
+}
+
+.btn-campana {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f7e815;
+    /* Bordo oscuro */
+    color: #000000 !important;
+    /* Fuerza el color blanco si tenés estilos de enlace globales */
+    font-family: 'Arial Black', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 900;
+    text-decoration: none;
+    padding: 6px 16px;
+    border-radius: 6px;
+    gap: 10px;
+    height: 40px;
+    width: 260x;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.btn-campana:hover {
+    background-color: #f7d30c;
+}
+
+
+/* Estilo para el resto de etiquetas rojas comunes */
+
+.tag-item {
+    display: inline-block;
+    background-color: #ff0000;
+    color: #ffffff !important;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 6px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.tag-item:hover {
+    background-color: #cc0000;
+}
+
+.contenedor-que-opinas {
+    background-color: #0b0b0b;
+    /* Fondo negro puro */
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.cabecera-opinas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+}
+
+.titulo-opinas {
+    color: #ffffff;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    margin: 0;
+}
+
+.btn-ver-mas-opinas {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 900;
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.btn-ver-mas-opinas:hover {
+    opacity: 0.8;
+}
+
+
+/* Tarjeta de cada encuesta individual */
+
+.tarjeta-encuesta {
+    background-color: #ffffff;
+    /* Fondo rosado/beige claro de la encuesta */
+    border-radius: 4px;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pregunta-encuesta {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+    color: #111111;
+    margin-bottom: 20px;
+    min-height: 50px;
+}
+
+.opciones-encuesta {
+    flex-grow: 1;
+    margin-bottom: 25px;
+}
+
+.opcion-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #2b2b2b;
+    cursor: pointer;
+    margin-bottom: 4px;
+    width: 100%;
+}
+
+.opcion-item input {
+    margin-right: 8px;
+}
+
+.opcion-texto {
+    flex-grow: 1;
+}
+
+.votos-conteo {
+    font-size: 0.75rem;
+    color: #777777;
+    font-weight: normal;
+}
+
+
+/* Barra de progreso de votos */
+
+.progreso-barra {
+    background-color: #e0d0d0;
+    height: 14px;
+    border-radius: 3px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.progreso-relleno {
+    background-color: #d1c1c1;
+    /* Gris de progreso relleno */
+    height: 100%;
+}
+
+.seccion-encuesta {
+    height: 0%;
+}
+
+.btn-campana .icono-campana {
+    fill: none !important;
+    stroke: #000000 !important;
+    transition: fill 0.2s ease;
+}
+
+.btn-campana.activa .icono-campana {
+    fill: #000000 !important;
+    stroke: #000000 !important;
+}
+
+.btn-participar {
+    background-color: #f7e815;
+    color: #000000;
+    border: 1px solid #d4af00;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    width: 50%;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    align-self: center;
+    transition: background-color 0.2s ease;
+}
+
+.btn-participar:hover {
+    background-color: #f7ba13;
+}
+
+.seccion-destacadas {
+    background-color: #ffffff;
+}
+
+
+/* Franja roja con el título de Destacadas */
+
+.cabecera-destacadas {
+    background-color: #ff0000;
+    /* Rojo vivo continuo */
+    padding: 15px 25px;
+}
+
+.titulo-destacadas {
+    color: #ffffff;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin: 0;
+}
+
+
+/* Tarjeta de noticia destacada */
+
+.tarjeta-destacada {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.imagen-destacada-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    /* Fuerza la proporción horizontal */
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.imagen-destacada-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-destacada:hover .imagen-destacada-wrapper img {
+    transform: scale(1.03);
+    /* Sutil zoom al pasar el cursor */
+}
+
+
+/* Etiquetas de categoría bajo la foto */
+
+.tag-categoria-destacada {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 900;
+    color: #ffffff;
+    padding: 2px 8px;
+    align-self: flex-start;
+    border-radius: 2px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+
+/* Colores específicos de tags según la sección original */
+
+.cat-cosa {
+    background-color: #900000;
+}
+
+.cat-cocina {
+    background-color: #8b0000;
+}
+
+.cat-musica {
+    background-color: #7b0000;
+}
+
+
+/* Título de la noticia destacada */
+
+.titulo-nota-destacada {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 1.05rem;
+    font-weight: bold;
+    line-height: 1.3;
+    color: #111111;
+    margin: 0;
+    /* Evita títulos gigantes cortando a un máximo de 3 líneas */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+
+/* ==========================================================================
+   8. SECCIÓN COMENTARIOS (ESTILO MAQUETADO ROSADO)
+   ========================================================================== */
+
+.seccion-comentarios {
+    /* Línea negra separadora arriba */
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    margin-left: 10px;
+}
+
+
+/* Cabecera */
+
+.comentarios-cabecera {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1.5px solid #111111;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    margin-left: 10px;
+}
+
+.icono-comentario-titulo {
+    color: #111111;
+}
+
+.titulo-comentarios {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #111111;
+    margin: 0;
+}
+
+
+/* Entrada de texto */
+
+.escribir-comentario {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 35px;
+    margin-left: 60px;
+    /* Margen extra a la izquierda */
+    margin-right: 60px;
+    /* Margen extra a la derecha */
+}
+
+.avatar-comentario {
+    width: 45px;
+    height: 45px;
+    background-color: #c4c4c4;
+    /* Círculo gris del avatar */
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.avatar-chico {
+    width: 35px;
+    height: 35px;
+}
+
+.input-comentario-contenedor {
+    position: relative;
+    flex-grow: 1;
+}
+
+.input-comentario-texto {
+    width: 100%;
+    height: 45px;
+    border: 1px solid #a6a6a6;
+    border-radius: 4px;
+    padding: 10px 85px 10px 15px;
+    /* Margen derecho amplio para que el texto no tape los iconos */
+    font-size: 0.95rem;
+    color: #2b2b2b;
+    background-color: #ffffff;
+    outline: none;
+}
+
+.input-comentario-texto::placeholder {
+    color: #777777;
+}
+
+.input-iconos-derecha {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-icono-input {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #555555;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-icono-input:hover {
+    color: #000000;
+}
+
+
+/* Lista de Comentarios */
+
+.comentarios-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-left: 60px;
+    /* Margen extra a la izquierda */
+    margin-right: 60px;
+    /* Margen extra a la derecha */
+}
+
+.comentario-item {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.comentario-contenido {
+    flex-grow: 1;
+}
+
+.comentario-autor {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #111111;
+    margin: 0 0 5px 0;
+}
+
+.comentario-texto {
+    font-size: 0.95rem;
+    line-height: 1.45;
+    color: #333333;
+    margin: 0 0 8px 0;
+}
+
+.comentario-acciones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0d5d5;
+    /* Línea divisoria muy sutil bajo las acciones */
+    padding-bottom: 12px;
+}
+
+.btn-responder {
+    background: none;
+    border: none;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #555555;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    padding: 0;
+}
+
+.btn-responder:hover {
+    color: #000000;
+}
+
+.comentario-votos {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.votos-conteo-comentario {
+    font-size: 0.8rem;
+    color: #555555;
+    font-weight: bold;
+}
+
+.btn-voto {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #555555;
+    display: flex;
+    align-items: center;
+    padding: 2px 4px;
+}
+
+.btn-voto:hover {
+    color: #000000;
+}
+
+
+/* Comentarios Anidados / Hilos de respuesta */
+
+.comentario-respuestas {
+    margin-top: 15px;
+    padding-left: 50px;
+    /* Sangría a la derecha para anidar las respuestas */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.item-anidado {
+    gap: 12px;
+}
+
+
+/* Botón Ver Más del final de comentarios */
+
+.contenedor-ver-mas-comentarios {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+.btn-ver-mas-comentarios {
+    background-color: #f7b5b7;
+    /* Color de fondo rosa/salmón idéntico al de tu maqueta */
+    color: #111111;
+    border: none;
+    font-family: Arial, sans-serif;
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 10px 24px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-ver-mas-comentarios:hover {
+    background-color: #f5a0a3;
+}
+
+.btn-dock.activo {
+    border-color: #8b0000 !important;
+    color: #8b0000 !important;
+    background-color: #fff8f8 !important;
+}
+
+.btn-dock.activo svg {
+    fill: #8b0000 !important;
+    color: #8b0000 !important;
+}
+
+.menu-lateral-dock.ocultar-limite {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.menu-lateral-dock {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.menu-lateral-dock.cerrado {
+    transform: translateY(-50%) translateX(-110px);
+}
+
+.dock-wrapper {
+    position: relative;
+    width: auto;
+    background: #ffffff;
+    padding: 20px 15px;
+    border-radius: 0 20px 20px 0;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .08);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.container-fluid {
+    flex-direction: row;
+}
+
+.dock-iconos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.dock-linea-roja {
+    width: 2px;
+    height: 240px;
+    background-color: #ff6b70;
+    border-radius: 2px;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.btn-dock {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    background-color: transparent;
+    color: #111111;
+    border: 2px solid #111111;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+}
+
+.btn-dock:hover {
+    border-color: #8b0000;
+    color: #8b0000;
+    background-color: #fff8f8;
+}
+
+.btn-toggle-dock {
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 40px;
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    border-left: none;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #111111;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    padding: 0;
+}
+
+.btn-toggle-dock:hover {
+    background-color: #f5f5f5;
+    color: #8b0000;
+}
+
+.menu-lateral-dock.cerrado #flechaToggle {
+    transform: rotate(180deg);
+}
+
+#flechaToggle {
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.btn-dock::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 125%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-10px);
+    background-color: #111111;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1010;
+}
+
+.btn-dock::before {
+    content: "";
+    position: absolute;
+    left: 110%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-5px);
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #111111 transparent transparent;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+    z-index: 1010;
+}
+
+.btn-dock:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(0);
+}
+
+.tuManera {
+    background-color: rgb(255, 192, 203);
+    padding: 30px;
+    margin: 50px 10px;
+}
+
+.tuManeraIcono {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tuManeraTexto h4,
+.tuManeraTexto h5 {
+    font-weight: bolder;
+    display: block;
+}
+
+.seccion-comentarios .tuManera {
+    height: 13%;
+    object-position: center;
+    object-fit: cover;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.seccion-comentarios .tuManeraIcono {
+    margin-bottom: 240px;
+}
+
+.seccion-comentarios .tuManeraTexto h4 {
+    font-size: 25px;
+}
+
+.seccion-comentarios .tuManeraTexto h5 {
+    font-size: 20px;
+}
+
+.tuManeraBoton1 button,
+.tuManeraBoton2 button {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    align-items: center;
+    border-width: 2px;
+    border-radius: 4px;
+    font-weight: 500;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.tuManeraBoton1 button {
+    border-color: #990004;
+    background-color: #990004;
+    color: white;
+}
+
+.tuManeraBoton2 button {
+    border-color: #990004;
+    background-color: white;
+    color: #990004;
+}
+
+.circuloCandado {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #FF9797;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.circuloCandado svg {
+    width: 45px;
+    height: 45px;
+}
+
+.btn-dock:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(0);
+}
+
+@media (min-width: 992px) {
+    .con-linea-editorial {
+        position: relative;
+        padding-left: 50px;
+        padding-right: 20px;
+    }
+    .con-linea-editorial::before {
+        content: "";
+        position: absolute;
+        left: 20px;
+        top: 10px;
+        bottom: 10px;
+        width: 1.5px;
+        background-color: #cccccc;
+    }
+    .indicador-linea {
+        position: absolute;
+        left: 11px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #ffffff;
+        padding: 10px 0;
+        z-index: 10;
+        width: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+    .indicador-linea span {
+        font-family: sans-serif;
+        font-size: 1.6rem;
+        font-weight: 900;
+        color: #000000;
+        line-height: 1;
+    }
+}
+
+@media (max-width: 991px) {
+    .con-linea-editorial {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.escribir-comentario.comentario-deshabilitado {
+    background-color: #f1f1f1;
+    /* Relleno gris */
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    pointer-events: none;
+    /* Deshabilita cualquier clic en este contenedor */
+}
+
+
+/* Estilo para el input deshabilitado */
+
+.escribir-comentario.comentario-deshabilitado .input-comentario-texto {
+    background-color: #e9ecef !important;
+    /* Gris un poco más oscuro para el input */
+    color: #6c757d !important;
+    border-color: #ccc !important;
+    cursor: not-allowed;
+    /* Cursor de bloqueo */
+}
+
+
+/* Color para el icono del candado */
+
+.escribir-comentario.comentario-deshabilitado .icono-candado {
+    color: #8b0000;
+    /* Color bordó/rojo oscuro para destacar el bloqueo */
+    display: flex;
+    align-items: center;
+    padding-right: 5px;
+}
