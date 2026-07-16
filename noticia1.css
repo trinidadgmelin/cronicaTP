@@ -269,6 +269,18 @@ header .dia {
     padding-bottom: 5px;
 }
 
+.btn-campana .icono-campana {
+    fill: none !important;
+    stroke: #ffffff !important;
+    transition: fill 0.2s ease;
+}
+
+
+
+.btn-campana.activa .icono-campana {
+    fill: #ffffff !important;
+    stroke: #ffffff !important;
+}
 
 /* Cada fila de noticia recomendada */
 
