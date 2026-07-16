@@ -109,3 +109,11 @@ if (btnEnviar && inputComentario && contenedorComentarios) {
         }
     });
 }
+
+const btnCampana = document.querySelector(".btn-campana");
+
+if (btnCampana) {
+    btnCampana.addEventListener("click", function() {
+        this.classList.toggle("activa");
+    });
+}
