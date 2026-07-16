@@ -1,0 +1,436 @@
+/* ==========================================================================
+   1. FUENTES, CONFIGURACIÓN GLOBAL Y FONDO DE GUÍA (GRID)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* El contenedor principal replica las columnas rosas de fondo usando un gradiente lineal.
+   Alinea las dos secciones principales lado a lado.
+*/
+.contenedor-principal {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    gap: 40px;
+    background-image: linear-gradient(to right, rgba(255, 151, 151, 0.15) 60px, transparent 20px);
+    background-size: calc((100% + 20px) / 12) 100%;
+}
+/* ==========================================================================
+   2. HEADER & NAVEGACIÓN
+   ========================================================================== */
+header .menu {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.headerIzq, 
+.headerDer,
+.headerCentro {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.headerIzq, 
+.headerDer {
+    gap: 20px;
+}
+
+/* Fuerza a que los SVGs dentro de los enlaces del header sean negros por defecto */
+.headerIzq a, 
+.headerDer a {
+    color: #000000;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease; /* Transición suave para el hover */
+}
+
+/* Mantiene el color bordó/rojo cuando pasás el mouse por encima */
+.headerIzq a:hover, 
+.headerDer a:hover {
+    color: #990004;
+}
+
+.headerCentro {
+    justify-content: center;
+}
+
+header .dia {
+    display: block;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: italic;
+    padding: 10px 10px 10px 16%;
+    list-style: none;
+    background-color: #CCCCCC;
+}
+/* ==========================================================================
+   3. COLUMNA IZQUIERDA: SUMATE A LA COMUNIDAD
+   ========================================================================== */
+.comunidad {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.comunidad .titulo1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin: 0;
+    line-height: 1;
+    color: #000000;
+}
+
+.comunidad .titulo2 {
+    font-size: 3.2rem;
+    font-weight: 900;
+    margin: 0 0 15px 0;
+    line-height: 1;
+    color: #ff0000; /* Rojo vibrante de Crónica */
+}
+
+.comunidad h3 {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #333333;
+    margin-bottom: 40px;
+    line-height: 1.4;
+}
+
+/* Lista de Beneficios */
+.beneficios {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.beneficios li {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icono-contenedor {
+    width: 65px;
+    height: 65px;
+    background-color: #FF9797;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    color: #ffffff;
+}
+
+.icono-contenedor svg {
+    width: 32px;
+    height: 32px;
+}
+
+.beneficios li h3 {
+    font-size: 1.05rem;
+    font-weight: 900;
+    margin: 0 0 4px 0;
+    color: #000000;
+    letter-spacing: 0.5px;
+}
+
+.beneficios li p {
+    font-size: 0.95rem;
+    margin: 0;
+    color: #555555;
+}
+
+/* Línea divisoria vertical entre secciones */
+.comunidad {
+    position: relative;
+}
+
+.comunidad::after {
+    content: "";
+    position: absolute;
+    right: -20px;
+    top: 20px;
+    width: 2px;
+    height: 90%;
+    background-color: #000000;
+}
+/* ==========================================================================
+   4. COLUMNA DERECHA: FORMULARIO DE REGISTRO
+   ========================================================================== */
+.registrarse {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.registrarse h2 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin: 0 0 5px 0;
+    color: #000000;
+    letter-spacing: -0.5px;
+}
+
+.registrarse h3 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #444444;
+    margin: 0 0 30px 0;
+}
+
+/* Estilos de los inputs del Formulario */
+#registroForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-grupo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.input-grupo label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #000000;
+    letter-spacing: 0.5px;
+}
+
+.input-grupo input {
+    width: 100%;
+    height: 45px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    background-color: #F2F2F2;
+    border: 1.5px solid #333333;
+    border-radius: 2px;
+    transition: all 0.2s ease;
+}
+
+.input-grupo input:focus {
+    outline: none;
+    background-color: #ffffff;
+    border-color: #ff0000;
+}
+
+/* Subtítulos de Intereses */
+.subtitulo-interes {
+    font-size: 1.4rem !important;
+    font-weight: 900 !important;
+    margin: 20px 0 3px 0 !important;
+}
+
+.subtitulo-interes + h3 {
+    font-size: 0.95rem;
+    color: #666666;
+    margin-bottom: 15px;
+}
+
+/* Selector de Temas de Interés (Botones dinámicos y flexibles en Desktop) */
+.lista-interinterests, 
+.lista-interesantes,
+.lista-intereses {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 35px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* En Desktop, flexibilizamos las filas internas para que los elementos se centren */
+.lista-intereses li {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: center; /* Centra los botones de la segunda fila (la de 3) */
+}
+
+.lista-intereses button {
+    flex: 1;
+    max-width: calc(25% - 8px); /* Limita el tamaño máximo para que queden alineados con una grilla de 4 */
+    height: 40px;
+    background-color: #F2F2F2;
+    border: 1.5px solid #333333;
+    border-radius: 2px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #000000;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.lista-intereses button:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* Estado activo: Mantiene exactamente el mismo estilo de hover cuando está seleccionado */
+.lista-intereses button.seleccionado {
+    background-color: #333333;
+    color: #ffffff;
+    border-color: #333333; /* Cambiado a juego con el fondo para que no rompa el diseño */
+}
+
+/* Botón de Envío Metálico/Rojo Crónica */
+.btn-crear {
+    width: 60%;
+    margin: 0 auto;
+    height: 50px;
+    background-color: #990004;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-crear:hover {
+    background-color: #cc0006;
+}
+
+.enlace-login {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.95rem;
+    color: #333333;
+    font-weight: 500;
+}
+
+.enlace-login a {
+    color: #ff0000;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.enlace-login a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   5. RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 768px) {
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    section {
+        margin: 20px 0;
+    }
+
+    header .menu {
+        justify-content: space-between;
+    }
+
+    .headerIzq, 
+    .headerDer,
+    .headerCentro {
+        flex-direction: row;
+        justify-content: center;
+        padding: 0;
+    }
+
+    header .dia {
+        padding-left: 0;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .ocultar-mobile {
+        display: none;
+    }
+
+    /* --- CAMBIOS ESPECÍFICOS PARA EL CONTENEDOR DE REGISTRO --- */
+    
+    /* Pasa el flex horizontal a vertical en mobile */
+    .contenedor-principal {
+        flex-direction: column;
+        padding: 20px 15px;
+        gap: 40px;
+        background-size: calc((100% + 15px) / 6) 100%; /* Adapta la grilla guía de fondo */
+    }
+
+    /* Remueve paddings laterales y elimina la barra vertical derecha convirtiéndola en horizontal */
+    .comunidad {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .comunidad::after {
+        position: relative;
+        content: "";
+        display: block;
+        right: 0;
+        top: 40px;
+        width: 100%;
+        height: 2px;
+        background-color: #000000;
+    }
+
+    /* Centra los textos de la cabecera del bloque comunidad */
+    .comunidad .titulo1 {
+        font-size: 2.2rem;
+    }
+
+    .comunidad .titulo2 {
+        font-size: 2.6rem;
+    }
+
+    .comunidad h3 {
+        margin-bottom: 30px;
+    }
+
+    /* Ajusta la lista de beneficios a alineación izquierda/natural */
+    .beneficios li {
+        text-align: left;
+    }
+
+    .registrarse {
+        padding-left: 0;
+    }
+
+    .registrarse h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .registrarse h3 {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    /* Agranda el botón de envío para que sea cómodo al tacto en pantallas chicas */
+    .btn-crear {
+        width: 100%;
+        height: 48px;
+    }
+}

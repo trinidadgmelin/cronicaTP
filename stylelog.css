@@ -1,0 +1,1052 @@
+/* ==========================================================================
+   1. FUENTES Y ESTILOS GLOBALES
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body {
+    font-family: "Inter", sans-serif;
+    margin: 0px 5px;
+    padding: 0;
+    max-width: 100%;       /* Asegura que el cuerpo no pase el ancho de la pantalla */
+    }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+section {
+    margin: 30px 0;
+}
+
+/* ==========================================================================
+   2. HEADER & NAVEGACIÓN
+   ========================================================================== */
+header .menu {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.headerIzq, 
+.headerDer,
+.headerCentro {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.headerIzq, 
+.headerDer {
+    gap: 20px;
+}
+
+.headerCentro {
+    justify-content: center;
+}
+
+header .dia {
+    display: block;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: italic;
+    padding: 10px 10px 10px 16%;
+    list-style: none;
+    background-color: #CCCCCC;
+}
+
+/* ==========================================================================
+   3. ESTRUCTURA DE TARJETAS (CARDS)
+   ========================================================================== */
+.card {
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+section:not(.opinion) .card {
+    margin-bottom: 15px; /* Crea una separación limpia hacia abajo */
+}
+
+/* Evita que la última tarjeta de la columna deje un espacio extra innecesario */
+section:not(.opinion) .card:last-child {
+    margin-bottom: 0;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.card-body h6 {
+    display: inline-block;
+    background-color: #990004;
+    color: white;
+    font-weight: bolder;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.tarjetaNoticia .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Comportamiento interno de filas en tarjetas */
+.card .row {
+    align-items: stretch;
+    width: 100%;
+}
+
+.card .col-md-4 {
+    display: flex;
+}
+
+.card .row img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ==========================================================================
+   4. SECCIÓN: TU MANERA
+   ========================================================================== */
+.tuManera {
+    background-color: rgb(255, 192, 203);
+    padding: 30px;
+    margin: 50px 10px;
+}
+
+.tuManeraIcono {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tuManeraTexto h4, 
+.tuManeraTexto h5 {
+    font-weight: bolder;
+    display: block;
+}
+
+.tuManeraBoton1 button,
+.tuManeraBoton2 button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-width: 2px;
+    border-radius: 4px;
+    font-weight: 500;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.tuManeraBoton1 button {
+    border-color: #990004;
+    background-color: #990004;
+    color: white;
+}
+
+.tuManeraBoton2 button {
+    border-color: #990004;
+    background-color: white;
+    color: #990004;
+}
+
+.circuloCandado{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    background: #FF9797;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin:auto;
+}
+
+.circuloCandado svg{
+    width:45px;
+    height:45px;
+}
+/* ==========================================================================
+   5. SECCIÓN: OPINIÓN, RANKINGS Y ENCUESTA (CORREGIDO)
+   ========================================================================== */
+.opinion {
+    background-color: #333333;
+    margin: 50px 10px;
+    padding: 30px;
+}
+
+.opinion h3 {
+    color: white;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.opinion ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.opinion ul button {
+    background-color: #FF0000;
+    color: white;
+    font-weight: bolder;
+    padding: 5px;
+    border: 0;
+    border-radius: 4px;
+    margin-left: 315px;
+    margin-right: 50px;
+    cursor: pointer;
+}
+
+.comentado {
+    background-color: white;
+}
+
+.tituloComentado {
+    background-color: #990004;
+    color: white;
+    padding: 10px;
+}
+
+.cardComentado {
+    padding: 20px 0;
+}
+
+/* --- CORRECCIÓN DE LA CARD DE MÁS COMENTADOS/GUARDADOS --- */
+.cardComentado .card {
+    display: block; /* Quitamos flex nativo para evitar conflictos con Bootstrap */
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+/* Forzamos a que el texto ocupe todo el ancho disponible */
+.cardComentado .card-body {
+    width: 100%;
+    padding: 10px 15px;
+}
+
+/* Estilo para la etiqueta CATEGORIA estilo botón rojo */
+.cardComentado .card-body h6 {
+    background-color: #990004;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+/* Estilo para el título de la noticia dentro del ranking */
+.cardComentado .card-title {
+    color: #333333;
+    font-size: 1.05rem;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.cardComentado .card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.numeroComentado {
+    color: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.numeroComentado h4 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* Encuesta y Alturas Automáticas */
+.col-md-4:has(.encuesta) {
+    align-self: start;
+}
+
+.comentado.encuesta {
+    height: max-content;
+}
+
+.encuesta {
+    width: 100%;
+    overflow: hidden;
+}
+
+.cuerpoEncuesta,
+.listaEncuesta {
+    width: 100%;
+}
+
+.cuerpoEncuesta {
+    padding: 15px;
+}
+
+.encuesta *,
+.cuerpoEncuesta *,
+.listaEncuesta * {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Barras de progreso de la Encuesta */
+.progress {
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}
+
+.progress-bar {
+    background-color: #e60000;
+}
+
+.barra-opcion-1 { width: 75%; }
+.barra-opcion-2 { width: 40%; }
+.barra-opcion-3 { width: 15%; }
+
+.participaron ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.participaron p {
+    margin: 0;
+}
+
+.votoBoton {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.votoBoton button {
+    width: 100%;
+    max-width: 180px;
+    padding: 10px;
+    background: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+/* ==========================================================================
+   6. SECCIONES TEMÁTICAS
+   ========================================================================== */
+
+/* Fondos y degradados */
+.actualidad, .sociedad, .entretenimiento, .agenda, .vida, .interes {
+    background: linear-gradient(to bottom, #ff0000 0 30%, white 30% 100%);
+    margin: 50px 0;
+    padding: 30px 30px;
+}
+
+
+/* Cabeceras de las listas */
+.actualidad ul, .sociedad ul, .entretenimiento ul, .interes ul, .agenda ul, .vida ul, .depo ul, .CM ul, .FMQ ul, .DS ul {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 8px;
+    list-style: none;
+    padding: 0px 0px 30px 0px;
+    margin: 0;
+    background: transparent;
+    width: 100%; /* Forzamos el ancho completo para que '.mas' empuje el botón */
+}
+
+.actualidad h3, .sociedad h3, .entretenimiento h3, .agenda h3, .vida h3, .interes h3 {
+    color: white;
+    font-weight: bold;
+    margin-left: 10px;
+    background: transparent;
+}
+
+/* Botones de las cabeceras */
+.actualidad ul button, .sociedad ul button, .entretenimiento ul button, .agenda ul button, .vida ul button, .interes ul button {
+    background-color: #1E1E1E;
+    color: white;
+    font-weight: bolder;
+    padding: 5px;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+/* SECCIONES LOGIN */
+/* --- Contenedor General con Gradiente Ajustado --- */
+.segunLeiste {
+    background: linear-gradient(to bottom, #2b2b2b 0 50%, #ffffff 50% 100%);
+    margin: 50px 0;
+    padding: 30px 15px;
+}
+
+.personaliza {
+    /* Reducimos la porción oscura al 40% porque las tarjetas de categorías son más bajas */
+    background: #333333;
+    margin: 50px 0;
+    padding: 30px 15px;
+}
+
+/* --- Forzar a que las tarjetas de categorías suban --- */
+.personaliza .row.g-2 {
+    /* Empuja la fila de tarjetas hacia arriba para que muerdan el fondo oscuro como en la sección de arriba */
+    margin-top: -15px !important; 
+}
+
+/* --- Cabeceras (ul) --- */
+.segunLeiste ul,
+.personaliza ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    list-style: none;
+    /* Reducimos el padding inferior para que las tarjetas no se alejen de la cabecera */
+    padding: 0 0 15px 0; 
+    margin: 0;
+    width: 100%;
+    background: transparent;
+}
+
+.segunLeiste h3,
+.personaliza h3 {
+    color: white;
+    font-weight: bold;
+    margin: 0 0 0 10px;
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+    background: transparent;
+}
+
+/* --- Botón VER MÁS --- */
+.segunLeiste ul button,
+.personaliza ul button {
+    background-color: white;
+    color: #1E1E1E;
+    font-weight: bolder;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.2s;
+}
+
+.segunLeiste ul button:hover,
+.personaliza ul button:hover {
+    background-color: #e0e0e0;
+}
+
+/* Empuja el botón VER MÁS */
+.segunLeiste .mas,
+.personaliza .mas {
+    margin-left: auto;
+}
+
+/* --- Tarjetas Categorías (Fijamos una altura responsiva ideal) --- */
+.personalizaCard {
+    position: relative;
+    width: 100%;
+    height: 140px; /* Altura perfecta para tarjetas de categorías panorámicas */
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.personalizaCard img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.personalizaCard .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.personalizaCard:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.personalizaCard h5 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: bolder;
+    text-align: center;
+    width: 90%;
+    margin: 0;
+    letter-spacing: 1.2px;
+    z-index: 2;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.personaliza a {
+    text-decoration: none;
+}
+
+
+.depo {
+    background: linear-gradient(to bottom, #04D6AA 0 30%, white 30% 100%);
+    margin: 50px 0;
+    padding: 30px 30px;
+}
+
+.CM {
+    background: linear-gradient(to bottom, #FB83DB 0 30%, white 30% 100%);
+    margin: 50px 0;
+    padding: 30px 30px;
+}
+
+.FMQ {
+    background: linear-gradient(to bottom, #696969 0 30%, white 30% 100%);
+    margin: 50px 0;
+    padding: 30px 30px;
+}
+
+.DS {
+    background: linear-gradient(to bottom, #DE0E7A 0 30%, white 30% 100%);
+    margin: 50px 0;
+    padding: 30px 30px;
+}
+
+.depo ul button { background-color: #FFEA00; color: #333333; font-weight: bolder; padding: 5px; border: 0; border-radius: 4px; cursor: pointer; margin: 0 10px; }
+.CM ul button { background-color: #E5027B; color: white; font-weight: bolder; padding: 5px; border: 0; border-radius: 4px; cursor: pointer; margin: 0 10px; }
+.FMQ ul button { background-color: #2C2C2C; color: white; font-weight: bolder; padding: 5px; border: 0; border-radius: 4px; cursor: pointer; margin: 0 10px; }
+.DS ul button { background-color: #04D6AA; color: white; font-weight: bolder; padding: 5px; border: 0; border-radius: 4px; cursor: pointer; margin: 0 10px; }
+
+/* Empuja el botón 'VER MAS' a la derecha como lo tenías antes */
+.mas {
+    margin-left: auto;
+    background: transparent;
+}
+
+.noticiaPrincipal {
+    background-color: #333333;
+    color: #F2F2F2;
+}
+
+/* Espaciado vertical original de tus tarjetas */
+.noticiasDerecha {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.noticiasDerecha .card {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.depo img, .CM img, .FMQ img, .DS img {
+    background: transparent;
+}
+
+.depo .card { background-color: #D3F8F0; }
+.CM .card { background-color: #FED6F3; }
+.FMQ .card { background-color: #E8D9D9; }
+.DS .card { background-color: #EAFDF9; }
+
+
+/* SECCIÓN PERSONALIZA */
+
+.personaliza{
+    background: linear-gradient(to bottom, #2f2f2f 0 30%, white 30% 100%);
+    margin: 50px 0;
+    padding: 30px;
+}
+
+.personaliza ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0 0 30px;
+    margin: 0;
+    width: 100%;
+}
+
+.personaliza h3{
+    color: white;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.personaliza ul button{
+    background: white;
+    color: #1E1E1E;
+    font-weight: bold;
+    padding: 5px;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.personaliza .mas{
+    margin-left: auto;
+}
+.personalizaCard{
+    position: relative;
+    width: 100%;
+    height: 145px;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.personalizaCard img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.personalizaCard .overlay{
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.35);
+}
+
+.personalizaCard h5{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    width: 90%;
+    z-index: 2;
+}
+/* ==========================================================================
+   7. FOOTER
+   ========================================================================== */
+footer {
+    background-color: #990004;
+    padding: 50px 10px;
+}
+
+footer ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0 50px;
+    padding: 0;
+}
+
+.logofooter {
+    margin-right: auto;
+}
+
+footer ul li:not(.logofooter) {
+    width: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuPopup{
+    position: fixed;
+    top: 0;
+    left: -320px;
+
+    width: 280px;
+    height: 100vh;
+
+    background: white;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    transition: left .3s ease, box-shadow .3s ease;
+
+    z-index: 9999;
+}
+
+.menuPopup.active{
+    left: 0;
+    box-shadow: 4px 0 10px rgba(0,0,0,.25);
+}
+
+.menuPopup img{
+    width: 170px;
+    display: block;
+    margin: 60px auto 30px;
+}
+
+.menuPopup ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    flex: 1;
+}
+
+.menuPopup li{
+    border-top: 1px solid #ddd;
+}
+
+.menuPopup a{
+    display: flex;
+    align-items: center;
+    padding: 18px 24px;
+    color: #333;
+    font-weight: 500;
+}
+
+.menuPopup a:hover{
+    background: #f5f5f5;
+}
+
+#cerrarMenu{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    border: none;
+    background: transparent;
+
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+/* ==========================================================================
+   8. MEDIA QUERIES (DISEÑO RESPONSIVO)
+   ========================================================================== */
+@media (max-width: 768px) {
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    section {
+        margin: 20px 0;
+    }
+
+    header .menu {
+        justify-content: space-between;
+    }
+
+    .headerIzq, 
+    .headerDer,
+    .headerCentro {
+        flex-direction: row;
+        justify-content: center;
+        padding: 0;
+    }
+
+    header .dia {
+        padding-left: 0;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .ocultar-mobile {
+        display: none;
+    }
+
+    .noticiasDerecha {
+        display: flex;
+        flex-direction: column;
+        gap: 15px; /* Mantiene el aire entre una tarjeta y otra */
+    }
+    
+    .card-body {
+     width: 100%;
+     flex-grow: 1
+    }
+
+    .tuManera{
+        padding:20px;
+    }
+
+    .tuManera .row{
+        justify-content:center;
+        align-items:center;
+        row-gap:20px;
+    }
+
+    .tuManeraIcono{
+        flex:0 0 100%;
+        max-width:100%;
+    }
+
+    .tuManeraTexto{
+        flex:0 0 100%;
+        max-width:100%;
+        text-align:center;
+    }
+
+    .tuManeraBoton1,
+    .tuManeraBoton2{
+        flex:0 0 50%;
+        max-width:50%;
+        display:flex;
+        justify-content:center;
+    }
+
+    .tuManeraBoton1 button,
+    .tuManeraBoton2 button{
+        width:100%;
+        max-width:180px;
+    }
+
+    .opinion{
+    padding:20px;
+}
+
+.opinion ul{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0;
+    margin-bottom:20px;
+}
+
+.opinion h3{
+    margin:0;
+    padding:0;
+    font-size:2rem;
+    line-height:1.1;
+}
+
+.opinion ul button{
+    margin:0;
+    padding:5px;
+    font-size:.9rem;
+}
+
+.cardComentado{
+    margin-bottom:10px;
+}
+
+.numeroComentado{
+    justify-content:flex-start;
+}
+
+.numeroComentado h4{
+    font-size:1.8rem;
+}
+
+.cardComentado .card-title{
+    font-size:.9rem;
+}
+
+.cardComentado .card-body{
+    padding:8px;
+}
+
+/* ================= PERSONALIZA ================= */
+
+.personaliza{
+    margin:30px 10px;
+}
+
+.personalizaTexto{
+    padding:30px 20px;
+    text-align:center;
+}
+
+.personalizaTexto h3{
+    font-size:1.6rem;
+}
+
+.personalizaTexto p{
+    font-size:.95rem;
+}
+
+.personalizaCard{
+    min-height:200px;
+}
+
+.personalizaCard .candado{
+    width:60px;
+    height:60px;
+}
+
+.personalizaCard .candado img,
+.personalizaCard .candado svg{
+    width:26px;
+    height:26px;
+}
+
+.personalizaCard h5{
+    font-size:.8rem;
+    bottom:12px;
+}
+
+.menuPopup{
+        top:0;
+        left:-100vw;
+
+        width:100vw;
+        height:100vh;
+
+        display:flex;
+        flex-direction:column;
+
+        overflow-y:auto;
+
+        background:white;
+    }
+
+    .menuPopup.active{
+        left:0;
+    }
+
+    #cerrarMenu{
+        position:absolute;
+        top:20px;
+        right:20px;
+        font-size:2.2rem;
+    }
+
+    .menuPopup img{
+        width:180px;
+        margin:70px auto 30px;
+    }
+
+    .menuPopup ul{
+        flex:1;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+
+        margin:0;
+        padding:0;
+    }
+
+    .menuPopup li{
+        border-top:1px solid #ddd;
+        text-align:center;
+    }
+
+    .menuPopup li:last-child{
+        border-bottom:1px solid #ddd;
+    }
+
+    .menuPopup a{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
+        padding:22px;
+
+        font-size:1.15rem;
+    }
+
+    .mas{
+    display: none;
+}
+
+.actualidad ul,
+.sociedad ul,
+.entretenimiento ul,
+.agenda ul,
+.vida ul,
+.interes ul,
+.depo ul,
+.CM ul,
+.FMQ ul,
+.DS ul{
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.actualidad h3,
+.sociedad h3,
+.entretenimiento h3,
+.agenda h3,
+.vida h3,
+.interes h3,
+.depo h3,
+.CM h3,
+.FMQ h3,
+.DS h3{
+    margin: 0;
+}
+
+footer {
+        padding: 30px 10px;
+    }
+
+    footer ul {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        gap: 25px;
+    }
+
+   .redes {
+        display: flex;          /* Activamos Flexbox para alinear en fila */
+        flex-direction: row;    /* Forzamos a que se queden en una fila horizontal */
+        justify-content: center;
+        align-items: center;
+        gap: 25px;              /* Separación horizontal entre cada icono */
+    }
+
+    .logofooter {
+        margin-right: 0;
+    }
+
+    .logofooter img {
+        width: 180px;
+    }
+
+    footer ul li:not(.logofooter) {
+        width: auto;
+    }
+
+    footer ul li:not(.logofooter) svg {
+        width: 24px;
+        height: 24px;
+    }
+}
