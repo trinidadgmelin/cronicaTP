@@ -417,7 +417,18 @@ footer ul li:not(.logofooter) {
     background-color: #700000;
 }
 
+.btn-campana .icono-campana {
+    fill: none !important;
+    stroke: #ffffff !important;
+    transition: fill 0.2s ease;
+}
 
+
+
+.btn-campana.activa .icono-campana {
+    fill: #ffffff !important;
+    stroke: #ffffff !important;
+}
 /* Estilo para el resto de etiquetas rojas comunes */
 
 .tag-item {
