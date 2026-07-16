@@ -3,52 +3,646 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="perfil.css">
     <title>Perfil de Usuario - Crónica</title>
-</head>
-<body style="background-color: #F2F2F2;">
+    <!-- CORRECCIÓN DE FUENTES: Importación de Material Icons estándar y Roboto -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght=400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
 
- <header>
-        <ul>
-            <li><a href="#">
-                <svg  width="24" height="24" fill="currentColor" viewBox="0 0 24 24" >
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* --- HEADER --- */
+        header .menu {
+            display: flex;
+            list-style-type: none;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .headerIzq, 
+        .headerDer,
+        .headerCentro {
+            display: flex;
+            align-items: center;
+            list-style: none;
+        }
+
+        .headerIzq, 
+        .headerDer {
+            gap: 20px;
+        }
+
+        .headerIzq a:hover, 
+        .headerDer a:hover {
+            color: #990004;
+        }
+
+        .headerCentro {
+            justify-content: center;
+        }
+
+        header .dia {
+            display: block;
+            font-size: 18px;
+            font-weight: normal;
+            font-style: italic;
+            padding: 10px 10px 10px 16%;
+            list-style: none;
+            background-color: #CCCCCC;
+        }
+
+
+        /* --- CONTENEDOR PRINCIPAL --- */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* --- BOTÓN VOLVER --- */
+        .back-btn {
+            color: #666;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        /* --- COLUMNA IZQUIERDA (Perfil y Preferencias) --- */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* Perfil de Usuario */
+        .profile-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .profile-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ccc;
+        }
+
+        .profile-details h2 {
+            font-size: 24px;
+            font-weight: 400;
+        }
+
+        .profile-details h2 strong {
+            font-weight: 900;
+        }
+
+        .profile-details p {
+            color: #666;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .edit-btn {
+            background-color: #990000;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 11px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        /* Secciones Comunes */
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn-ver-mas {
+            background-color: #990000;
+            color: #fff;
+            border: none;
+            padding: 6px 12px;
+            font-size: 11px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Categorías */
+        .categories-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .category-tag {
+            background-color: #ffd6d6;
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .category-tag span {
+            font-size: 14px;
+            font-weight: normal;
+            padding: 2px 6px;
+            border-radius: 50%;
+            transition: background 0.2s;
+        }
+        
+        .category-tag span:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        /* Guardados */
+        .saved-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .saved-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .saved-card {
+            background: #fff;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+            position: relative;
+            height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .saved-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .saved-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(transparent 40%, rgba(0,0,0,0.85) 90%);
+            z-index: 2;
+        }
+
+        .saved-card-info {
+            position: relative;
+            z-index: 3;
+            padding: 12px;
+            color: #fff;
+        }
+
+        .saved-card-info h4 {
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .saved-card-info p {
+            font-size: 10px;
+            color: #ccc;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+
+        /* --- COLUMNA DERECHA (Sidebar) --- */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar-section {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .sidebar-header {
+            background-color: #999999;
+            color: #fff;
+            padding: 12px 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sidebar-header .btn-ver-mas {
+            background-color: #990000;
+        }
+
+        .sidebar-subheader {
+            background-color: #f0f0f0;
+            color: #666;
+            padding: 8px 15px;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        /* Listas comunes de Sidebar */
+        .sidebar-list {
+            list-style: none;
+        }
+
+        .sidebar-item {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sidebar-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-text h5 {
+            font-size: 13px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .item-text p {
+            font-size: 10px;
+            color: #888;
+            margin-top: 3px;
+            text-transform: uppercase;
+        }
+
+        .bell-icon {
+            color: #990000;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        /* Historial */
+        .history-item {
+            display: flex;
+            gap: 12px;
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .history-item:last-child {
+            border-bottom: none;
+        }
+
+        .history-img {
+            width: 80px;
+            height: 55px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .history-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .history-info h5 {
+            font-size: 11px;
+            font-weight: bold;
+            line-height: 1.3;
+            color: #111;
+        }
+
+        .history-meta {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 9px;
+            color: #888;
+            margin-top: 5px;
+        }
+
+        .history-meta span {
+            font-size: 14px; /* Un poquito más grande para que el icono de reloj se lea mejor */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <ul class="menu">
+            <div class="headerIzq">
+            <li id="abrirMenu">
+                <svg  width="32" height="32" fill="#33333" viewBox="0 0 24 24" >
                 <path d="M3 5h18v2H3zm0 6h18v2H3zm0 6h18v2H3z"></path>
                 </svg>
-                </a>
             </li>
             <li><a href="#">
-                <svg  width="24" height="24" fill="currentColor" viewBox="0 0 24 24" >
+                <svg  width="24" height="24" fill="#33333" viewBox="0 0 24 24" class="ocultar-mobile">
                 <path d="m17.06 14.94-2.8-1.34A6.96 6.96 0 0 0 16 9c0-3.86-3.14-7-7-7S2 5.14 2 9s3.14 7 7 7c1.76 0 3.37-.66 4.6-1.74l1.34 2.8 5 5 2.12-2.12zM9 14c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5"></path>
                 </svg>
             </a></li>
-            <li><a href="index.html">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Cr%C3%B3nica-logo.svg/1280px-Cr%C3%B3nica-logo.svg.png" alt="Crónica Logo" width="100">
+            </div>
+            <div class="headerCentro">
+            <li><a href="indexlog.html">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Cr%C3%B3nica-logo.svg/1280px-Cr%C3%B3nica-logo.svg.png" alt="Crónica Logo" width="200">
             </a></li>
+            </div>
+            <div class="headerDer">
          <li><a href="#">
-                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"></path>
+                <svg  xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#33333" viewBox="0 0 24 24" class="ocultar-mobile">
+                <path d="M14 12c0-1.1-.9-2-2-2s-2 .9-2 2a2 2 0 1 0 4 0m-6 0c0-1.07.42-2.07 1.17-2.82L7.76 7.76A5.97 5.97 0 0 0 6 12c0 1.6.62 3.11 1.76 4.25l1.41-1.42A3.96 3.96 0 0 1 8 12m8.24-4.24-1.41 1.41C15.59 9.93 16 10.93 16 12s-.42 2.07-1.17 2.83l1.41 1.41C17.37 15.11 18 13.6 18 12s-.62-3.11-1.76-4.24"></path><path d="M6.34 17.66C4.83 16.15 3.99 14.14 3.99 12s.83-4.14 2.34-5.65L4.92 4.93C3.03 6.82 1.99 9.33 1.99 12s1.04 5.18 2.93 7.07l1.41-1.41ZM19.07 4.93l-1.41 1.41C19.17 7.85 20 9.86 20 12s-.83 4.15-2.34 5.66l1.41 1.41C20.96 17.18 22 14.67 22 12s-1.04-5.18-2.93-7.07"></path>
                 </svg>
                 </a>
             </li>
-            <li><a href="perfil.html">
-                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.579 2 2 6.579 2 12s4.579 10 10 10 10-4.579 10-10S17.421 2 12 2zm0 5c1.727 0 3 1.272 3 3s-1.273 3-3 3-3-1.272-3-3 1.273-3 3-3zm0 13c-2.674 0-5.115-1.196-6.735-3.084C6.13 15.355 8.929 14 12 14s5.87 1.355 6.735 2.916C17.115 18.804 14.674 20 12 20z"></path>
-                </svg>
-                </a>
-            </li>
+            </div>
         </ul>
 
         <ul class="dia"><li>Martes, 9 de Junio de 2026</li></ul>
 
     </header>
 
-    <div class="container mt-5 pt-4 text-center">
-        <div class="card p-5 mx-auto" style="max-width: 500px; background-color: white; box-shadow: 0px 4px 10px rgba(0,0,0,0.05); border: none; border-radius: 8px;">
-            <h2 class="mb-3" style="font-weight: bold; font-family: 'Inter', sans-serif; color: #2C2C2C;">Mi Perfil de Crónica</h2>
-            <p class="text-muted">Sección de perfil para el usuarip</p>
-            <hr>
-            
+    <div class="container">
 
+        <main class="main-content">
+            
+            <div>
+                <a href="#" class="back-btn">&lt; Volver</a>
+                
+                <section class="profile-card">
+                    <div class="profile-info">
+                        <img class="profile-avatar" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80" alt="Ezequiel">
+                        <div class="profile-details">
+                            <h2>¡Hola, <strong>EZEQUIEL</strong> !</h2>
+                            <p>EzeElPola@Hotmail.com</p>
+                        </div>
+                    </div>
+                    <button class="edit-btn">Editar Perfil</button>
+                </section>
+            </div>
+
+            <section>
+                <h3 class="section-title">Categorías que te gustaron</h3>
+                <div class="categories-grid">
+                    <a class="category-tag">SOCIEDAD <span>✕</span></a>
+                    <a class="category-tag">POLICIAL <span>✕</span></a>
+                    <a class="category-tag">ACTUALIDAD <span>✕</span></a>
+                    <a class="category-tag">COSA DE LOCOS <span>✕</span></a>
+                    <a class="category-tag">POLITICA <span>✕</span></a>
+                    <a class="category-tag">COCINA <span>✕</span></a>
+                    <a class="category-tag">MUNDO <span>✕</span></a>
+                </div>
+            </section>
+
+            <section>
+                <div class="section-title">
+                    <span>Guardados</span>
+                    <button class="btn-ver-mas">Ver más</button>
+                </div>
+                <div class="saved-grid">
+                    <div class="saved-card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHluyBm1Yg1tnrHX29K421ipuftfy698mPYrqCubZgEibT9HH7iJ_rE1o&s=10" alt="Educación">
+                        <div class="saved-card-info">
+                            <h4>Educación</h4>
+                            <p>Boleto Estudiantil, Paros...</p>
+                        </div>
+                    </div>
+                    <div class="saved-card">
+                        <img src="https://humanidades.com/wp-content/uploads/2018/08/sociedad-e1574394980949.jpg" alt="Sociedad">
+                        <div class="saved-card-info">
+                            <h4>Sociedad</h4>
+                            <p>Mercado, ANSES, Feriados...</p>
+                        </div>
+                    </div>
+                    <div class="saved-card">
+                        <img src="https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/F1F2/production/_118283916_b19c5a1f-162b-410b-8169-f58f0d153752.jpg.webp" alt="Cosa de Locos">
+                        <div class="saved-card-info">
+                            <h4>Cosa de Locos</h4>
+                            <p>Humor, Insólito, Locura...</p>
+                        </div>
+                    </div>
+                    <div class="saved-card">
+                        <img src="https://tn.com.ar/resizer/v2/el-festejo-de-la-seleccion-argentina-despues-del-triunfo-ante-suiza-ap-fotojeff-roberson-ASZVZOPWGJAU5FIQCLEMR4ZWRI.png?auth=e2085a186085368cbc08cb4d4f1ceaf3249e000d2d44315b9ca8206837cb7d04&width=767" alt="Deporte">
+                        <div class="saved-card-info">
+                            <h4>Deporte</h4>
+                            <p>Lionel Scaloni, Fútbol...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <aside class="sidebar">
+
+            <div class="sidebar-section">
+                <div class="sidebar-header">
+                    <span>Temas Seguidos</span>
+                    <button class="btn-ver-mas">Ver más</button>
+                </div>
+                <ul class="sidebar-list" id="lista-seguidos">
+                    <li class="sidebar-item">
+                        <div class="item-text">
+                            <h5>Universidad Nacional de La Plata</h5>
+                            <p>Nueva nota · Hace 3 minutos</p>
+                        </div>
+                        <!-- CAMBIO: clase material-icons para asegurar compatibilidad -->
+                        <span class="material-icons bell-icon">notifications</span>
+                    </li>
+                    <li class="sidebar-item">
+                        <div class="item-text">
+                            <h5>Boleto Estudiantil</h5>
+                            <p>Nueva nota · Hace 10 minutos</p>
+                        </div>
+                        <span class="material-icons bell-icon">notifications</span>
+                    </li>
+                    <li class="sidebar-item">
+                        <div class="item-text">
+                            <h5>Transporte público</h5>
+                            <p>Nueva nota · Hace 18 minutos</p>
+                        </div>
+                        <span class="material-icons bell-icon">notifications</span>
+                    </li>
+                    <li class="sidebar-item">
+                        <div class="item-text">
+                            <h5>Memes y humor del mundial</h5>
+                            <p>Nueva nota · Hace 20 minutos</p>
+                        </div>
+                        <span class="material-icons bell-icon">notifications</span>
+                    </li>
+                </ul>
+
+                <div class="sidebar-subheader">Te puede interesar...</div>
+                <ul class="sidebar-list" id="lista-sugerencias">
+                    <li class="sidebar-item">
+                        <div class="item-text">
+                            <h5>Tortas desastrosas</h5>
+                            <p>Nueva nota · Hace 10 minutos</p>
+                        </div>
+                        <!-- CAMBIO: notifications_none para la campana vacía -->
+                        <span class="material-icons bell-icon">notifications_none</span>
+                    </li>
+                    <li class="sidebar-item">
+                        <div class="item-text">
+                            <h5>Partidos del mundial</h5>
+                            <p>Nueva nota · Hace 18 minutos</p>
+                        </div>
+                        <span class="material-icons bell-icon">notifications_none</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-header">
+                    <span>Historial</span>
+                    <button class="btn-ver-mas">Ver más</button>
+                </div>
+                <div>
+                    <div class="history-item">
+                        <img class="history-img" src="https://i1.cronica.com.ar/files/image/1670/1670005/6a299fb4c6ad4_1011_568!.webp?s=11d7d8cd72b131408ccdd5469cf4d50b&d=1781060400&oe=jpg" alt="Nota 1">
+                        <div class="history-info">
+                            <h5>Aval judicial al uso de firmas digitales para respaldar leyes de iniciativa popular</h5>
+                            <div class="history-meta">
+                                <span class="material-icons">schedule</span>
+                                <span>Leída hace 30 minutos</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="history-item">
+                        <img class="history-img" src="https://i1.cronica.com.ar/files/image/1669/1669409/6a28319aac771_1011_568!.webp?s=1de6c7fb222c111ef4138398e4b442b9&d=1780974000&oe=jpg" alt="Nota 2">
+                        <div class="history-info">
+                            <h5>El video de María Becerra sobre el Indio Solari que se volvió viral tras su partida: "En todos sus conciertos va a pasar eso..."</h5>
+                            <div class="history-meta">
+                                <span class="material-icons">schedule</span>
+                                <span>Leída ayer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="history-item">
+                        <img class="history-img" src="https://i1.cronica.com.ar/files/image/1623/1623257/699cc9a488377_1011_568!.webp?s=eb012479990fda937880ea2b79913427&d=1771815600&oe=jpg" alt="Nota 3">
+                        <div class="history-info">
+                            <h5>ANSES confirmó un pago de $320.000 en junio: ¿Quiénes lo cobran?</h5>
+                            <div class="history-meta">
+                                <span class="material-icons">schedule</span>
+                                <span>Leída ayer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <!-- SCRIPTS DE INTERACCIÓN -->
+    <script>
+        // 1. Eliminar categorías existentes
+        const categoryTags = document.querySelectorAll('.category-tag');
+        categoryTags.forEach(tag => {
+            const closeBtn = tag.querySelector('span');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    tag.remove();
+                });
+            }
+        });
+
+        // 2. Intercambio dinámico de Temas Seguidos <-> Sugerencias
+        const listaSeguidos = document.getElementById('lista-seguidos');
+        const listaSugerencias = document.getElementById('lista-sugerencias');
+
+        document.querySelector('.sidebar-section').addEventListener('click', function(event) {
+            const bell = event.target.closest('.bell-icon');
+            if (!bell) return;
+
+            const item = bell.closest('.sidebar-item');
+            if (!item) return;
+
+            if (listaSugerencias.contains(item)) {
+                // Modificamos el texto interno de Material Icons para mostrar la campana rellena
+                bell.textContent = 'notifications';
+                listaSeguidos.appendChild(item);
+            } 
+            else if (listaSeguidos.contains(item)) {
+                // Modificamos el texto interno para mostrar la campana vacía (outline)
+                bell.textContent = 'notifications_none';
+                listaSugerencias.appendChild(item);
+            }
+        });
+    </script>
 </body>
 </html>
