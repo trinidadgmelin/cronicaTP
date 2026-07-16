@@ -1094,37 +1094,16 @@ footer ul li:not(.logofooter) {
     align-items: center;
 }
 
-.tuManeraTexto h4,
+.tuManeraTexto h4, 
 .tuManeraTexto h5 {
     font-weight: bolder;
     display: block;
-}
-
-.seccion-comentarios .tuManera {
-    height: 13%;
-    object-position: center;
-    object-fit: cover;
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-
-.seccion-comentarios .tuManeraIcono {
-    margin-bottom: 240px;
-}
-
-.seccion-comentarios .tuManeraTexto h4 {
-    font-size: 25px;
-}
-
-.seccion-comentarios .tuManeraTexto h5 {
-    font-size: 20px;
 }
 
 .tuManeraBoton1 button,
 .tuManeraBoton2 button {
     display: flex;
     justify-content: center;
-    margin-top: 25px;
     align-items: center;
     border-width: 2px;
     border-radius: 4px;
@@ -1145,20 +1124,22 @@ footer ul li:not(.logofooter) {
     color: #990004;
 }
 
-.circuloCandado {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
+.circuloCandado{
+    width:90px;
+    height:90px;
+    border-radius:50%;
     background: #FF9797;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin:auto;
 }
 
-.circuloCandado svg {
-    width: 45px;
-    height: 45px;
+.circuloCandado svg{
+    width:45px;
+    height:45px;
 }
 
 .btn-dock:hover::before {
@@ -1250,7 +1231,7 @@ footer ul li:not(.logofooter) {
     }
 
     section {
-        margin: 20px 0;
+        margin: 20px 0px;
     }
 
     header .menu {
@@ -1275,7 +1256,7 @@ footer ul li:not(.logofooter) {
         display: none;
     }
     .col-lg-9 {
-    padding-left: 0px;
+    padding-left: 1em;
     }
 
     .tags-seccion {
@@ -1290,66 +1271,50 @@ footer ul li:not(.logofooter) {
     padding-left: 10px;
 }
 
-.tuManera {
-    background-color: rgb(255, 192, 203);
-    padding: 30px;
-    margin: 50px 10px;
-}
+.btn-participar {
 
-.tuManeraIcono {
-    display: flex;
-    justify-content: center;
     align-items: center;
+    
 }
 
-.tuManeraTexto h4, 
-.tuManeraTexto h5 {
-    font-weight: bolder;
-    display: block;
+.tuManera{
+        padding:20px;
+    }
+
+    .tuManera .row{
+        justify-content:center;
+        align-items:center;
+        row-gap:20px;
+    }
+
+    .tuManeraIcono{
+        flex:0 0 100%;
+        max-width:100%;
+    }
+
+    .tuManeraTexto{
+        flex:0 0 100%;
+        max-width:100%;
+        text-align:center;
+    }
+
+    .tuManeraBoton1,
+    .tuManeraBoton2{
+        flex:0 0 50%;
+        max-width:50%;
+        display:flex;
+        justify-content:center;
+    }
+
+    .tuManeraBoton1 button,
+    .tuManeraBoton2 button{
+        width:100%;
+        max-width:180px;
+    }
+
+    .btn-participar {
+    font-size: 16px;
 }
-
-.tuManeraBoton1 button,
-.tuManeraBoton2 button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-width: 2px;
-    border-radius: 4px;
-    font-weight: 500;
-    padding: 5px;
-    cursor: pointer;
-}
-
-.tuManeraBoton1 button {
-    border-color: #990004;
-    background-color: #990004;
-    color: white;
-}
-
-.tuManeraBoton2 button {
-    border-color: #990004;
-    background-color: white;
-    color: #990004;
-}
-
-.circuloCandado{
-    width:90px;
-    height:90px;
-    border-radius:50%;
-    background: #FF9797;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    margin:auto;
-}
-
-.circuloCandado svg{
-    width:45px;
-    height:45px;
-}
-
 
 footer {
         padding: 30px 10px;

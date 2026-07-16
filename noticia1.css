@@ -1143,7 +1143,11 @@ footer ul li:not(.logofooter) {
 .btn-participar {
 
     align-items: center;
-    
+
+}
+
+.btn-participar {
+    font-size: 16px;
 }
 
 footer {

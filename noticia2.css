@@ -1275,7 +1275,7 @@ footer ul li:not(.logofooter) {
         display: none;
     }
     .col-lg-9 {
-    padding-left: 0px;
+    padding-left: 1em;
     }
 
     .tags-seccion {
@@ -1290,7 +1290,15 @@ footer ul li:not(.logofooter) {
     padding-left: 10px;
 }
 
+.btn-participar {
 
+    align-items: center;
+
+}
+
+.btn-participar {
+    font-size: 16px;
+}
 
 footer {
         padding: 30px 10px;
