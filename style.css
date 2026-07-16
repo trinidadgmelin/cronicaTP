@@ -44,6 +44,11 @@ header .menu {
     gap: 20px;
 }
 
+.headerIzq a:hover, 
+.headerDer a:hover {
+    color: #990004;
+}
+
 .headerCentro {
     justify-content: center;
 }
@@ -531,6 +536,17 @@ section:not(.opinion) .card:last-child {
     border-radius: 4px;
     cursor: pointer;
     margin: 0 10px;
+}
+
+.btn-seguir:hover {
+    background-color: #333333;
+}
+
+/* Estado Activo (Fondo blanco, texto y borde negro) */
+.btn-seguir.activo {
+    background-color: white;
+    color: black;
+    border-color: black;
 }
 
 .depo ul button { background-color: #FFEA00; color: #333333; font-weight: bolder; padding: 5px; border: 0; border-radius: 4px; cursor: pointer; margin: 0 10px; }

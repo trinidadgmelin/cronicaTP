@@ -44,6 +44,11 @@ header .menu {
     gap: 20px;
 }
 
+.headerIzq a:hover, 
+.headerDer a:hover {
+    color: #990004;
+}
+
 .headerCentro {
     justify-content: center;
 }
@@ -661,30 +666,93 @@ section:not(.opinion) .card:last-child {
     z-index: 2;
 }
 /* ==========================================================================
-   7. FOOTER
+   FOOTER REDES ARRIBA / LOGO ABAJO - CENTRADO EN TODO DISPOSITIVO
    ========================================================================== */
-footer {
-    background-color: #990004;
-    padding: 50px 10px;
+footer.footer-centrado {
+    background-color: #990004 ;
+    padding: 40px 20px ;
+    width: 100% ;
+    box-sizing: border-box ;
+    
+    /* Centramos todo en vertical */
+    display: flex ;
+    flex-direction: column ;
+    align-items: center ;
+    justify-content: center ;
+    gap: 20px ; /* Separación justa entre redes y logo */
 }
 
-footer ul {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    margin: 0 50px;
+/* 1. Contenedor de iconos de redes (Siempre horizontal y centrado) */
+.social-icons-container {
+    display: flex ;
+    justify-content: center ;
+    align-items: center ;
+    gap: 15px ; /* Espacio entre circulitos */
+    list-style: none ;
+    margin: 0 ;
+    padding: 0 ;
+    width: auto ; /* Evita que ocupe el 100% */
+}
+
+/* Círculos de las redes sociales */
+.social-icons-container li.redes-sociales {
+    list-style: none ;
+    width: 44px ;
+    height: 44px ;
+    display: flex ;
+    justify-content: center ;
+    align-items: center ;
+    margin: 0 ;
+    padding: 0 ;
+    box-sizing: border-box ;
+    
+    border: 1.5px solid rgba(255, 255, 255, 0.6) ;
+    border-radius: 50% ;
+    background-color: transparent ;
+    transition: all 0.25s ease-in-out ;
+}
+
+/* Efecto hover */
+.social-icons-container li.redes-sociales:hover {
+    background-color: rgba(255, 255, 255, 0.15) ;
+    border-color: #ffffff ;
+    transform: translateY(-3px) ;
+}
+
+.social-icons-container li.redes-sociales a {
+    display: flex ;
+    justify-content: center ;
+    align-items: center ;
+    width: 100% ;
+    height: 100% ;
+}
+
+/* Asegurar que los SVG queden centrados y blancos */
+.social-icons-container li.redes-sociales svg {
+    fill: #ffffff ;
+    width: 18px ;
+    height: 18px ;
+    display: block ;
+    margin: 0 ;
+}
+
+/* 2. Contenedor del Logo (Centrado) */
+.logo-container {
+    display: flex ;
+    justify-content: center ;
+    align-items: center ;
+    width: 100% ;
+    margin: 0 ;
     padding: 0;
 }
 
-.logofooter {
-    margin-right: auto;
-}
-
-footer ul li:not(.logofooter) {
-    width: 48px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* AQUÍ ESTABA EL ERROR: Forzamos el ancho y el alto de la imagen del logo */
+.logo-container img {
+    height: 45px;       /* Altura fija para que no se estire */
+    width: auto;         /* Proporción automática */
+    max-width: 180px;    /* Límite de ancho para que no rompa */
+    display: block;
+    margin: 0 auto;      /* Centrado físico de la imagen */
 }
 
 .menuPopup{
@@ -754,6 +822,95 @@ footer ul li:not(.logofooter) {
     font-size: 2rem;
     cursor: pointer;
     z-index: 10000;
+}
+
+/* ==========================================================================
+   POP-UP REGISTRO EXITOSO
+   ========================================================================== */
+.popup-container {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 2000; /* Asegurar que quede por encima de todo, incluso del menú popup */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo desenfocado/oscuro */
+    backdrop-filter: blur(3px);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-contenido {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    animation: aparecerPopup 0.3s ease-out;
+}
+
+@keyframes aparecerPopup {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.popup-cerrar {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.popup-cerrar:hover {
+    color: #333;
+}
+
+.popup-icono {
+    margin-bottom: 15px;
+}
+
+.popup-contenido h2 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.popup-contenido p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.btn-aceptar {
+    background-color: #990004; /* Color rojo de tu identidad de marca */
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-aceptar:hover {
+    background-color: #cc0006;
 }
 
 /* ==========================================================================
@@ -1013,40 +1170,23 @@ footer ul li:not(.logofooter) {
     margin: 0;
 }
 
-footer {
-        padding: 30px 10px;
+footer.footer-centrado {
+        padding: 30px 15px ;
+        gap: 15px ;
     }
 
-    footer ul {
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
-        margin: 0;
-        gap: 25px;
+    .social-icons-container li.redes-sociales {
+        width: 38px ;
+        height: 38px ;
     }
 
-   .redes {
-        display: flex;          /* Activamos Flexbox para alinear en fila */
-        flex-direction: row;    /* Forzamos a que se queden en una fila horizontal */
-        justify-content: center;
-        align-items: center;
-        gap: 25px;              /* Separación horizontal entre cada icono */
+    .social-icons-container li.redes-sociales svg {
+        width: 15px ;
+        height: 15px ;
     }
 
-    .logofooter {
-        margin-right: 0;
-    }
-
-    .logofooter img {
-        width: 180px;
-    }
-
-    footer ul li:not(.logofooter) {
-        width: auto;
-    }
-
-    footer ul li:not(.logofooter) svg {
-        width: 24px;
-        height: 24px;
+    .logo-container img {
+        height: 35px ;    /* Un poquito más chico en mobile */
+        max-width: 140px ;
     }
 }
