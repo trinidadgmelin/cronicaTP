@@ -1093,45 +1093,93 @@ footer ul li:not(.logofooter) {
     transform: translateY(-50%) translateX(0);
 }
 
-@media (min-width: 992px) {
-    .con-linea-editorial {
-        position: relative;
-        padding-left: 50px;
-        padding-right: 20px;
+@media (max-width: 768px) {
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
     }
-    .con-linea-editorial::before {
-        content: "";
-        position: absolute;
-        left: 20px;
-        top: 10px;
-        bottom: 10px;
-        width: 1.5px;
-        background-color: #cccccc;
+
+    section {
+        margin: 20px 0;
     }
-    .indicador-linea {
-        position: absolute;
-        left: 11px;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: #ffffff;
-        padding: 10px 0;
-        z-index: 10;
-        width: 20px;
+
+    header .menu {
+        justify-content: space-between;
+    }
+
+    .headerIzq, 
+    .headerDer,
+    .headerCentro {
+        flex-direction: row;
         justify-content: center;
-        align-items: center;
+        padding: 0;
     }
-    .indicador-linea span {
-        font-family: sans-serif;
-        font-size: 1.6rem;
-        font-weight: 900;
-        color: #000000;
-        line-height: 1;
+
+    header .dia {
+        padding-left: 0;
+        text-align: center;
+        font-size: 12px;
     }
+
+    .ocultar-mobile {
+        display: none;
+    }
+    .col-lg-9 {
+    padding-left: 1em;
+    }
+
+    .tags-seccion {
+    margin-left: 0px;
 }
 
-@media (max-width: 991px) {
-    .con-linea-editorial {
-        padding-left: 15px;
-        padding-right: 15px;
+.seccion-comentarios {
+    margin-left: 0px;
+}
+
+.comentario-respuestas {
+    padding-left: 10px;
+}
+
+.btn-participar {
+
+    align-items: center;
+    
+}
+
+footer {
+        padding: 30px 10px;
+    }
+
+    footer ul {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        gap: 25px;
+    }
+
+   .redes {
+        display: flex;          /* Activamos Flexbox para alinear en fila */
+        flex-direction: row;    /* Forzamos a que se queden en una fila horizontal */
+        justify-content: center;
+        align-items: center;
+        gap: 25px;              /* Separación horizontal entre cada icono */
+    }
+
+    .logofooter {
+        margin-right: 0;
+    }
+
+    .logofooter img {
+        width: 180px;
+    }
+
+    footer ul li:not(.logofooter) {
+        width: auto;
+    }
+
+    footer ul li:not(.logofooter) svg {
+        width: 24px;
+        height: 24px;
     }
 }

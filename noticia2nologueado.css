@@ -1242,3 +1242,149 @@ footer ul li:not(.logofooter) {
     align-items: center;
     padding-right: 5px;
 }
+
+@media (max-width: 768px) {
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    section {
+        margin: 20px 0;
+    }
+
+    header .menu {
+        justify-content: space-between;
+    }
+
+    .headerIzq, 
+    .headerDer,
+    .headerCentro {
+        flex-direction: row;
+        justify-content: center;
+        padding: 0;
+    }
+
+    header .dia {
+        padding-left: 0;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .ocultar-mobile {
+        display: none;
+    }
+    .col-lg-9 {
+    padding-left: 0px;
+    }
+
+    .tags-seccion {
+    margin-left: 0px;
+}
+
+.seccion-comentarios {
+    margin-left: 0px;
+}
+
+.comentario-respuestas {
+    padding-left: 10px;
+}
+
+.tuManera {
+    background-color: rgb(255, 192, 203);
+    padding: 30px;
+    margin: 50px 10px;
+}
+
+.tuManeraIcono {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tuManeraTexto h4, 
+.tuManeraTexto h5 {
+    font-weight: bolder;
+    display: block;
+}
+
+.tuManeraBoton1 button,
+.tuManeraBoton2 button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-width: 2px;
+    border-radius: 4px;
+    font-weight: 500;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.tuManeraBoton1 button {
+    border-color: #990004;
+    background-color: #990004;
+    color: white;
+}
+
+.tuManeraBoton2 button {
+    border-color: #990004;
+    background-color: white;
+    color: #990004;
+}
+
+.circuloCandado{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    background: #FF9797;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin:auto;
+}
+
+.circuloCandado svg{
+    width:45px;
+    height:45px;
+}
+
+
+footer {
+        padding: 30px 10px;
+    }
+
+    footer ul {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        gap: 25px;
+    }
+
+   .redes {
+        display: flex;          /* Activamos Flexbox para alinear en fila */
+        flex-direction: row;    /* Forzamos a que se queden en una fila horizontal */
+        justify-content: center;
+        align-items: center;
+        gap: 25px;              /* Separación horizontal entre cada icono */
+    }
+
+    .logofooter {
+        margin-right: 0;
+    }
+
+    .logofooter img {
+        width: 180px;
+    }
+
+    footer ul li:not(.logofooter) {
+        width: auto;
+    }
+
+    footer ul li:not(.logofooter) svg {
+        width: 24px;
+        height: 24px;
+    }
+}

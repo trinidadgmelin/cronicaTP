@@ -1109,37 +1109,16 @@ footer ul li:not(.logofooter) {
     align-items: center;
 }
 
-.tuManeraTexto h4,
+.tuManeraTexto h4, 
 .tuManeraTexto h5 {
     font-weight: bolder;
     display: block;
-}
-
-.seccion-comentarios .tuManera {
-    height: 13%;
-    object-position: center;
-    object-fit: cover;
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-
-.seccion-comentarios .tuManeraIcono {
-    margin-bottom: 240px;
-}
-
-.seccion-comentarios .tuManeraTexto h4 {
-    font-size: 25px;
-}
-
-.seccion-comentarios .tuManeraTexto h5 {
-    font-size: 20px;
 }
 
 .tuManeraBoton1 button,
 .tuManeraBoton2 button {
     display: flex;
     justify-content: center;
-    margin-top: 25px;
     align-items: center;
     border-width: 2px;
     border-radius: 4px;
@@ -1160,21 +1139,24 @@ footer ul li:not(.logofooter) {
     color: #990004;
 }
 
-.circuloCandado {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
+.circuloCandado{
+    width:90px;
+    height:90px;
+    border-radius:50%;
     background: #FF9797;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin:auto;
 }
 
-.circuloCandado svg {
-    width: 45px;
-    height: 45px;
+.circuloCandado svg{
+    width:45px;
+    height:45px;
 }
+
 
 .btn-dock:hover::before {
     opacity: 1;
@@ -1182,78 +1164,128 @@ footer ul li:not(.logofooter) {
     transform: translateY(-50%) translateX(0);
 }
 
-@media (min-width: 992px) {
-    .con-linea-editorial {
-        position: relative;
-        padding-left: 50px;
-        padding-right: 20px;
+@media (max-width: 768px) {
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
     }
-    .con-linea-editorial::before {
-        content: "";
-        position: absolute;
-        left: 20px;
-        top: 10px;
-        bottom: 10px;
-        width: 1.5px;
-        background-color: #cccccc;
+
+    section {
+        margin: 20px 0;
     }
-    .indicador-linea {
-        position: absolute;
-        left: 11px;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: #ffffff;
-        padding: 10px 0;
-        z-index: 10;
-        width: 20px;
+
+    header .menu {
+        justify-content: space-between;
+    }
+
+    .headerIzq, 
+    .headerDer,
+    .headerCentro {
+        flex-direction: row;
+        justify-content: center;
+        padding: 0;
+    }
+
+    header .dia {
+        padding-left: 0;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .ocultar-mobile {
+        display: none;
+    }
+    .col-lg-9 {
+    padding-left: 1em;
+    }
+
+    .tags-seccion {
+    margin-left: 0px;
+}
+
+.seccion-comentarios {
+    margin-left: 0px;
+}
+
+.comentario-respuestas {
+    padding-left: 10px;
+}
+
+.btn-participar {
+
+    align-items: center;
+    
+}
+
+.tuManera{
+        padding:20px;
+    }
+
+    .tuManera .row{
+        justify-content:center;
+        align-items:center;
+        row-gap:20px;
+    }
+
+    .tuManeraIcono{
+        flex:0 0 100%;
+        max-width:100%;
+    }
+
+    .tuManeraTexto{
+        flex:0 0 100%;
+        max-width:100%;
+        text-align:center;
+    }
+
+    .tuManeraBoton1,
+    .tuManeraBoton2{
+        flex:0 0 50%;
+        max-width:50%;
+        display:flex;
+        justify-content:center;
+    }
+
+    .tuManeraBoton1 button,
+    .tuManeraBoton2 button{
+        width:100%;
+        max-width:180px;
+    }
+
+footer {
+        padding: 30px 10px;
+    }
+
+    footer ul {
+        flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
+        margin: 0;
+        gap: 25px;
     }
-    .indicador-linea span {
-        font-family: sans-serif;
-        font-size: 1.6rem;
-        font-weight: 900;
-        color: #000000;
-        line-height: 1;
+
+   .redes {
+        display: flex;          /* Activamos Flexbox para alinear en fila */
+        flex-direction: row;    /* Forzamos a que se queden en una fila horizontal */
+        justify-content: center;
+        align-items: center;
+        gap: 25px;              /* Separación horizontal entre cada icono */
     }
-}
 
-@media (max-width: 991px) {
-    .con-linea-editorial {
-        padding-left: 15px;
-        padding-right: 15px;
+    .logofooter {
+        margin-right: 0;
     }
-}
 
-.escribir-comentario.comentario-deshabilitado {
-    background-color: #f1f1f1;
-    /* Relleno gris */
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px solid #e0e0e0;
-    pointer-events: none;
-    /* Deshabilita cualquier clic en este contenedor */
-}
+    .logofooter img {
+        width: 180px;
+    }
 
+    footer ul li:not(.logofooter) {
+        width: auto;
+    }
 
-/* Estilo para el input deshabilitado */
-
-.escribir-comentario.comentario-deshabilitado .input-comentario-texto {
-    background-color: #e9ecef !important;
-    /* Gris un poco más oscuro para el input */
-    color: #6c757d !important;
-    border-color: #ccc !important;
-    cursor: not-allowed;
-    /* Cursor de bloqueo */
-}
-
-
-/* Color para el icono del candado */
-
-.escribir-comentario.comentario-deshabilitado .icono-candado {
-    color: #8b0000;
-    /* Color bordó/rojo oscuro para destacar el bloqueo */
-    display: flex;
-    align-items: center;
-    padding-right: 5px;
+    footer ul li:not(.logofooter) svg {
+        width: 24px;
+        height: 24px;
+    }
 }
